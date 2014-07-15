@@ -3,8 +3,21 @@
 // setup some globals for us to use throughout
 define('ROOTDIR', dirname(__FILE__));
 
-// include RedbeanPHP
-require_once(ROOTDIR . '/redbean/rb.phar');
+
+// include all our LIBS
+require_once(ROOTDIR . '/vendor/autoload.php');
+
+//with namespace Model
+define('REDBEAN_MODEL_PREFIX', '\\AskGodComAu\\Model\\');
+require_once(ROOTDIR . '/libs/redbean/rb.phar');
+
+
+
+
+// include our necessary CORE
+// require_once(ROOTDIR . '/src/AskGodComAu/Core/TwigFactory.php');
+
+
 
 class AskGodConfig
 {
@@ -34,5 +47,5 @@ class AdminUtil
 }
 
 
-require_once(ROOTDIR . '/redbean/modelsetup.php');
+require_once(ROOTDIR . '/modelsetup.php');
 

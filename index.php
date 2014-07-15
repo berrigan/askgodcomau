@@ -1,20 +1,9 @@
 <?php
-    require_once(dirname(__FILE__) . '/config.php');
-?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>askgodcomau :: Bootstrap 101 Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-</head>
-<body>
-    <h1>Hello, world!</h1>
-    <div>This stuff is hard</div>
-    <script src="http://code.jquery.com/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-</body>
-</html>
+    require_once('config.php');
+
+    $twig = \AskGodComAu\Core\TwigFactory::getTwig();
+    $view = $twig->loadTemplate('index.html');
+    echo $view->render(array('title' => 'AskGod.com.au!'));
+
 
