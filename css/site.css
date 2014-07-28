@@ -1,0 +1,32 @@
+/* apply a natural box layout model to all elements */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body,
+html {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background: #666666;
+  color: #eeeeee;
+}
+#content {
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #bce8f1;
+  padding-top: 0.1px;
+}
+#content input[type=text],
+#content input[type=email],
+#content input[type=textarea] {
+  border-radius: .5em;
+  padding: .2em .5em;
+  border: 2px solid blueviolet;
+  background-color: #eeeeee;
+  color: #222222;
+}

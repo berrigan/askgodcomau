@@ -7,10 +7,10 @@
     <orderEntry type="module-library">
       <library name="PHARS">
         <CLASSES>
-          <root url="phar://$MODULE_DIR$/redbean/rb.phar" />
+          <root url="phar://$MODULE_DIR$/libs/redbean/rb.phar" />
         </CLASSES>
         <SOURCES>
-          <root url="phar://$MODULE_DIR$/redbean/rb.phar" />
+          <root url="phar://$MODULE_DIR$/libs/redbean/rb.phar" />
         </SOURCES>
       </library>
     </orderEntry>

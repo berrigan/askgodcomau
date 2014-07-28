@@ -1,0 +1,20 @@
+{
+  "name": "askgodcomau",
+  "version": "0.1.0",
+  "description": "askgodcomau ===========",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/berrigan/askgodcomau.git/"
+  },
+  "author": "Owen B",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-less": "~0.11.3",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
