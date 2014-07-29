@@ -1,7 +1,59 @@
+
 </div>
 
 <script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/jquery.velocity.min.js"></script>
+<script src="js/velocity.ui.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<script>
+
+    // funky BG animate :-P
+    (function() {
+
+        var l = 0;
+        var $b = $('body');
+
+        if (window.location.href.indexOf('animate') != -1) {
+
+//            var raf_animateBG = function() {
+//                l -= 1;
+//                requestAnimationFrame(function() {
+//                    $b.css('background-position', l + 'px 0px');
+//                });
+//
+//                setTimeout(raf_animateBG, 10);
+//            }
+//            raf_animateBG();
+
+            var animateBG = function() {
+
+                $b.css('background-position', '0px 0px');
+
+                $b.velocity({
+                    backgroundPositionX: '-1280px'
+                }, {
+                    easing: 'linear',
+                    duration: 10000,
+                    complete: animateBG
+                });
+
+            };
+            animateBG();
+
+        }
+
+    })();
+
+
+
+
+    // If the page Twig template has defined a global pagejs function, let's run it
+    if (typeof window.pagejs === 'function') {
+        window.pagejs();
+    }
+
+</script>
 
 </body>
 </html>
