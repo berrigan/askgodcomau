@@ -7,11 +7,11 @@ define('ROOTDIR', dirname(__FILE__));
 // include all our LIBS
 require_once(ROOTDIR . '/vendor/autoload.php');
 
+require_once(ROOTDIR . '/libs/gluephp/glue.php');
+
 //with namespace Model
 define('REDBEAN_MODEL_PREFIX', '\\AskGodComAu\\Model\\');
 require_once(ROOTDIR . '/libs/redbean/rb.phar');
-
-
 
 
 // include our necessary CORE

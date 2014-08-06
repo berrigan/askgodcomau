@@ -1,3 +1,55 @@
+// MIXINS
+
+// placeholder overrides
+.placeholderOverridesChildren(@opacity, @color) {
+    ::-webkit-input-placeholder {
+        opacity: @opacity; color: @color;
+    }
+    ::-moz-placeholder {
+        opacity: @opacity; color: @color;
+    }
+    :-moz-placeholder {
+        opacity: @opacity; color: @color;
+    }
+    ::-ms-input-placeholder {
+        opacity: @opacity; color: @color;
+    }	/* IE10+ */
+}
+
+.placeholderOverrides(@opacity, @color) {
+    &::-webkit-input-placeholder {
+        opacity: @opacity; color: @color;
+    }
+    &::-moz-placeholder {
+        opacity: @opacity; color: @color;
+    }
+    &:-moz-placeholder {
+        opacity: @opacity; color: @color;
+    }
+    &::-ms-input-placeholder {
+        opacity: @opacity; color: @color;
+    }	/* IE10+ */
+}
+
+
+
+
+// VARS
+@fontSize: 18px;
+@fontFamilyDefault: Tahoma, Verdana, Arial;
+
+@formColor: #666666;
+@errorColor: rgb(234, 26, 26);
+@textShadowColor: rgba(255,255,255, 0.6);
+
+@formBackgroundTransparent: rgba(192, 192, 222, 0.7);
+
+
+@smallDeviceMediaWidth: 480px;
+@fontSizeSmaller: 18px;
+
+
+
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
@@ -7,6 +59,7 @@ html {
     position: relative;
     margin: 0;
     padding: 0;
+    min-height: 100%;
 }
 
 body {
@@ -14,37 +67,110 @@ body {
     margin: 0;
     padding: 0;
 
-    color: #eeeeee;
+    min-height: 100%;
+
+    font-family: @fontFamilyDefault;
+    font-size: @fontSize;
+    color: #ffffff;
 
     background: #60b9ff;
     background-image: url('../img/clouds-from-screen_website-version2.gif');
     background-repeat: repeat;
-    background-position: 0 0;
+    background-position: center 0;
 }
 
 // help get our font sizes OK on mobile (iOS) as not to cause zooming
-select, textarea, input[type="text"],   input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"],
-select:focus, textarea:focus, input:focus
-{ font-size: 16px; }
+// IF we want bigger in places, then we need to be more specific later
+// select, textarea, input[type="text"],   input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"],
+// select:focus, textarea:focus, input:focus
+// { font-size: 16px; }
 
 
-#content {
+#contentbg {
+    position: fixed;
+    margin: 0 auto;
+    height: 100%;
+
+    width: 660px;
+    margin-left: -330px;
+    left: 50%;
+
+    background-color: rgba(0,0,0,0.05);
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.1);
+
+    @media all and (max-width: @smallDeviceMediaWidth) {
+        position: absolute;
+        top: 0px; left: 0px; width: 100%; height: 100%;
+    }
+
+}
+
+.content {
 
     position: relative;
     margin: 0 auto;
-    width: 600px;
-    max-width: 90%;
-    background: #bce8f1;
+    width: 660px;
+    max-width: 96%;
 
-    padding-top: 1px; // margin-collapse fix
+    padding: 1em 1em; // margin-collapse fix as well
 
-    input[type=text], input[type=email], input[type=textarea] {
-        border-radius: .5em;
-        padding: .2em .5em;
-        border: 2px solid blueviolet;
-        background-color: #eeeeee;
-        color: #222222;
+    @media all and (max-width: @smallDeviceMediaWidth) {
+        padding: 1em .4em;
     }
+
+    min-height: 100%;
+    background-color: transparent;
+
+    input[type=text], input[type=email], textarea {
+
+        -webkit-appearance: none;
+
+        display: block;
+
+        border-radius: .8em;
+        padding: .4em .8em .3em;
+        border: 2px solid transparent;
+
+        font-family: @fontFamilyDefault;
+        font-size: @fontSize;
+
+        @media all and (max-width: @smallDeviceMediaWidth) {
+            font-size: @fontSizeSmaller;
+        }
+
+        margin: 0;
+
+        background-color: rgb(128, 128, 255);
+        background-color: @formBackgroundTransparent;
+
+        color: rgb(255, 255, 255);
+
+        width: 100%;
+        resize: none;
+
+        &:focus {
+            outline: none;
+            background-color: rgb(255,255,255);
+            color: @formColor;
+            .placeholderOverrides(1, #666666);
+        }
+
+        &::autocomplete {
+            background-color: rgb(255,255,255);
+        }
+
+        &::autofill {
+            background-color: rgb(255,255,255);
+        }
+    }
+
+    textarea {
+        height: 12em;
+        border-top-right-radius: .5em;
+        border-bottom-right-radius: .5em;
+    }
+
+    .placeholderOverridesChildren(1, #ffffff);
 
     p {
         position: relative;
@@ -52,5 +178,109 @@ select:focus, textarea:focus, input:focus
         background: purple;
     }
 
+    a {
+        color: white;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+        }
+    }
+
 }
+
+
+
+
+// index
+#indexpage {
+
+    .indexcontainer {
+
+        display: block;
+        position: relative;
+        margin-bottom: 1.5em;
+
+        label.formlabel {
+            display: block;
+            position: relative;
+            padding: .2em 1em;
+            font-size:  @fontSize * .85;
+            font-weight: bold;
+            opacity: 0;
+        }
+
+
+
+        &.rightalign {
+            text-align: right;
+            padding-right: 1em;
+        }
+
+    }
+
+    #aboutcontainer {
+        margin-bottom: 1.5em;
+    }
+
+    #submitcontainer {
+
+        input[type="submit"] {
+
+            background: none;
+            border: none;
+            color: white;
+
+            cursor: pointer;
+
+            font-size: @fontSize;
+
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+
+
+    input.error, textarea.error {
+        border: 2px solid @errorColor;
+    }
+
+    label.error {
+        color: @errorColor;
+        position: absolute;
+        top: 0em;
+        right: .8em;
+
+        padding: .2em .5em;
+
+        background-color: @formBackgroundTransparent;
+
+        border-top-left-radius: .3em;
+        border-top-right-radius: .3em;
+
+        font-size: @fontSize * .85;
+        font-weight: bold;
+
+        text-shadow: 0px 1px 0px @textShadowColor;
+
+
+        @media all and (max-width: @smallDeviceMediaWidth) {
+            position: relative;
+            border-top-left-radius: 0em;
+            border-top-right-radius: 0em;
+            border-bottom-left-radius: .3em;
+            border-bottom-right-radius: .3em;
+            top: auto;
+            right: auto;
+            display: block;
+            width: 85%;
+            margin: 0em auto 0;
+        }
+
+    }
+
+}
+
+
 
