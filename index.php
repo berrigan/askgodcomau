@@ -11,8 +11,9 @@ $nsControllers = '\\AskGodComAu\\Controllers\\';
 
 $urls = array(
     '/' => $nsControllers . 'Index',
-    '/about' => $nsControllers . 'About'
+    '/about' => $nsControllers . 'About',
+    '/questions' => $nsControllers . 'Questions',
+    '/questions/([0-9]+)' => $nsControllers . 'Questions'
 );
 
 glue::stick($urls);
-

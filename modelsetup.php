@@ -1,4 +1,5 @@
 <?php
+use AskGodComAu\Core\AdminUtil;
 
 function setupAdmin($username, $password, $expertise, $superuser) {
 
@@ -25,12 +26,11 @@ try
     // Some RedbeanPHP Model setup
 
     // userquestion
-    $userquestion = R::dispense('userquestion');
-    $userquestion->text = 'Hello World';
-
-    $id = R::store($userquestion);       //Create or Update
-    $userquestion = R::load('userquestion',$id); //Retrieve
-
+//    $userquestion->text = 'Hello World';
+//    $userquestion = R::dispense('userquestion');
+//
+//    $id = R::store($userquestion);       //Create or Update
+//    $userquestion = R::load('userquestion',$id); //Retrieve
 
 
     // masterquestion

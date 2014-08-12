@@ -1,24 +1,7 @@
 <?php namespace AskGodComAu\Controllers;
-
-class IndexModel {
-
-    public $name = '';
-    public $email = '';
-    public $question = '';
-
-    private function consumePOST_single($postName) {
-        if ($_POST[$postName]) {
-            $this->$postName = $_POST[$postName];
-        }
-    }
-
-    public function consumePOST() {
-        $this->consumePOST_single('name');
-        $this->consumePOST_single('email');
-        $this->consumePOST_single('question');
-    }
-}
-
+use AskGodComAu\Core\RedbeanHelpers;
+use AskGodComAu\Model\IndexModel;
+use AskGodComAu\Core\HttpUtility;
 
 class Index {
 
@@ -34,8 +17,6 @@ class Index {
     function GET() {
 
         $form = new IndexModel();
-        $form->name = 'Owen Berry';
-        $form->email = 'email@email.com';
 
         $model = array(
             'title' => 'AskGod.com.au!',
@@ -46,19 +27,34 @@ class Index {
 
     function POST() {
 
-        $form = new IndexModel();
-        $form->consumePOST();
-
-        $form->email = 'not an email';
-
         // process $form ... if we can!
 
+        $indexModel = new IndexModel();
+        $is_valid = $indexModel->consumePOST();
 
-        // or return it, and see ...
+        if ($is_valid) {
 
-        $model = array('title' => 'AskGod.com.au!',
-                        'form' => $form,
-                        'forceValidation' => true);
+            $userquestion = \R::dispense('userquestion');
+            $userquestion->consumeIndexModel($indexModel);
+
+            try
+            {
+                $id = \R::store($userquestion);
+                HttpUtility::Redirect("questions/{$id}");
+            }
+            catch(\Exception $exSave) {
+                $model = array('title' => 'AskGod.com.au!',
+                    'form' => $indexModel,
+                    'forceValidation' => true);
+            }
+
+
+        } else {
+
+            $model = array('title' => 'AskGod.com.au!',
+                'form' => $indexModel,
+                'forceValidation' => true);
+        }
 
         echo $this->view->render($model);
     }

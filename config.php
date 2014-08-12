@@ -33,19 +33,5 @@ R::setup('mysql:host=' . $config->db_server .';dbname=' . $config->db_dbname,
     $config->db_username, $config->db_password);
 
 
-
-class AdminUtil
-{
-    public static function GetAdmin($username, $password) {
-        $admin  = R::find('admin', 'username = :username AND hash = :hash ', [ ':username' => $username, ':hash' => AdminUtil::Hash($password) ]);
-        return $admin;
-    }
-
-    public static function Hash($input) {
-        return hash('sha512', 'askgodcomau_' . $input, false);
-    }
-}
-
-
 require_once(ROOTDIR . '/modelsetup.php');
 

@@ -20,8 +20,8 @@ body {
   font-family: Tahoma, Verdana, Arial;
   font-size: 18px;
   color: #ffffff;
-  background: #60b9ff;
-  background-image: url('../img/clouds-from-screen_website-version2.gif');
+  background: #2182ff;
+  background-image: url('../img/clouds-square_sml.gif');
   background-repeat: repeat;
   background-position: center 0;
 }
@@ -88,7 +88,7 @@ body {
 .content textarea:focus {
   outline: none;
   background-color: #ffffff;
-  color: #666666;
+  color: #555555;
   /* IE10+ */
 }
 .content input[type=text]:focus::-webkit-input-placeholder,
@@ -220,4 +220,28 @@ body {
     width: 85%;
     margin: 0em auto 0;
   }
+}
+#indexpage #question {
+  background-color: rgba(216, 216, 244, 0.85);
+  color: #333333;
+  /* IE10+ */
+}
+#indexpage #question::-webkit-input-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+#indexpage #question::-moz-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+#indexpage #question:-moz-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+#indexpage #question::-ms-input-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+#indexpage #question:focus {
+  background-color: #ffffff;
 }

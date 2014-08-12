@@ -10,22 +10,23 @@
 
     <form id="indexform" action="/" method="post">
 
+
+        <div class="indexcontainer">
+            <label class="formlabel" for="question">MY QUESTION IS _</label>
+            <textarea id="question" name="question" placeholder="MY QUESTION IS _" tabindex="1"required="true" >{{ form.question }}</textarea>
+        </div>
+
         <div class="indexcontainer">
             <label class="formlabel" for="name">MY NAME IS _</label>
-            <input id="name" name="name" value="{{ form.name }}" type="text"
-                   placeholder="MY NAME IS _" tabindex="1"
-                   required="true" />
+            <input id="name" name="name" value="{{ form.name }}" type="text" placeholder="MY NAME IS _" tabindex="2" required="true" />
         </div>
 
         <div class="indexcontainer">
             <label class="formlabel" for="email">MY EMAIL IS _</label>
-            <input id="email" name="email"  value="{{ form.email }}" type="email" placeholder="MY EMAIL IS _" tabindex="2" required="true" />
+            <input id="email" name="email"  value="{{ form.email }}" type="email" placeholder="MY EMAIL IS _" tabindex="3" required="true" />
         </div>
 
-        <div class="indexcontainer">
-            <label class="formlabel" for="question">MY QUESTION IS _</label>
-            <textarea id="question" name="question" placeholder="MY QUESTION IS _" tabindex="3"required="true" >{{ form.question }}</textarea>
-        </div>
+
 
         <div class="indexcontainer rightalign" id="submitcontainer">
             <input class="submit" type="submit" value="SUBMIT" name="submit" />

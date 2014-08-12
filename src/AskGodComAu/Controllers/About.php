@@ -13,7 +13,9 @@ class About {
 
     function GET() {
 
-        $model = array('title' => 'AskGod.com.au!');
+        $model = array(
+            'title' => 'AskGod.com.au!'
+        );
         echo $this->view->render($model);
     }
 }

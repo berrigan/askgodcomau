@@ -38,7 +38,7 @@
 @fontSize: 18px;
 @fontFamilyDefault: Tahoma, Verdana, Arial;
 
-@formColor: #666666;
+@formColor: #555555;
 @errorColor: rgb(234, 26, 26);
 @textShadowColor: rgba(255,255,255, 0.6);
 
@@ -73,8 +73,8 @@ body {
     font-size: @fontSize;
     color: #ffffff;
 
-    background: #60b9ff;
-    background-image: url('../img/clouds-from-screen_website-version2.gif');
+    background: #2182ff;
+    background-image: url('../img/clouds-square_sml.gif');
     background-repeat: repeat;
     background-position: center 0;
 }
@@ -278,6 +278,17 @@ body {
             margin: 0em auto 0;
         }
 
+    }
+
+    #question {
+        background-color: rgba(216, 216, 244, 0.85);
+        color: #333333;
+
+        .placeholderOverrides(1, #333333);
+
+        &:focus {
+            background-color: rgb(255,255,255);
+        }
     }
 
 }
