@@ -14,7 +14,8 @@ class Questions {
     function GET($matches) {
 
         $model = array(
-            'title' => 'AskGod.com.au!'
+            'title' => 'AskGod.com.au!',
+            'nav' => 'questions'
         );
 
         if (sizeof($matches) === 2) {

@@ -1,5 +1,4 @@
 
-
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="/js/jquery.validate.min.js"></script>
 <script src="/js/jquery.velocity.min.js"></script>
@@ -51,8 +50,16 @@
     // resize content
     (function() {
 
+        var $backgroundimage = $(document.getElementById('backgroundimage'));
+        var $body = $('body');
 
-
+        var resizeBackground = function() {
+            var verticalLarger = window.innerHeight > window.innerWidth;
+            $backgroundimage.toggleClass('verticallarger', verticalLarger);
+            $body.toggleClass('verticallarger', verticalLarger);
+        };
+        resizeBackground();
+        window.addEventListener('resize', resizeBackground);
     })();
 
 

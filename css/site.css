@@ -1,3 +1,22 @@
+.centerColumn {
+  position: relative;
+  margin: 0 auto;
+  width: 480px;
+  max-width: 96%;
+  padding: 1em 1em;
+}
+@media all and (max-width: 480px) {
+  .centerColumn {
+    padding: 1em .4em 1em;
+  }
+}
+@font-face {
+  font-family: 'cabin';
+  src: url('fonts/cabin-regular-webfont.eot');
+  src: url('fonts/cabin-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/cabin-regular-webfont.woff') format('woff'), url('fonts/cabin-regular-webfont.ttf') format('truetype'), url('fonts/cabin-regular-webfont.svg#cabinregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 /* apply a natural box layout model to all elements */
 *,
 *:before,
@@ -10,27 +29,55 @@ html {
   position: relative;
   margin: 0;
   padding: 0;
-  min-height: 100%;
+  height: 100%;
 }
 body {
   position: relative;
   margin: 0;
   padding: 0;
   min-height: 100%;
-  font-family: Tahoma, Verdana, Arial;
+  font-family: cabin, Tahoma, Verdana, Arial;
   font-size: 18px;
   color: #ffffff;
   background: #2182ff;
-  background-image: url('../img/clouds-square_sml.gif');
+  background-image: url('../img/clouds.500.dither90.lossy10.149frames.12fps.gif');
   background-repeat: repeat;
   background-position: center 0;
+  background-size: 100% auto;
+}
+body.verticallarger {
+  background-size: auto 100%;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+.button {
+  position: relative;
+  display: inline-block;
+  border-radius: 0px;
+  background: none;
+  border: 1px solid #ffffff;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: .2em 1em .1em;
+}
+.button:hover,
+.button:focus {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 #contentbg {
+  display: block;
   position: fixed;
   margin: 0 auto;
   height: 100%;
-  width: 660px;
-  margin-left: -330px;
+  width: 480px;
+  margin-left: -240px;
   left: 50%;
   background-color: rgba(0, 0, 0, 0.05);
   box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
@@ -42,21 +89,84 @@ body {
     left: 0px;
     width: 100%;
     height: 100%;
+    margin-left: 0px;
   }
+}
+#header {
+  position: relative;
+  margin: 0 auto;
+  width: 480px;
+  max-width: 96%;
+  padding: 1em 1em;
+  padding-top: 2em;
+  padding-bottom: 0;
+}
+@media all and (max-width: 480px) {
+  #header {
+    padding: 1em .4em 1em;
+  }
+}
+@media all and (max-width: 480px) {
+  #header {
+    padding-top: 2em;
+    padding-bottom: 0;
+  }
+}
+#header #askgodlogo {
+  position: relative;
+  display: block;
+  margin: .2em auto .2em;
+  width: 100%;
+  text-align: center;
+}
+#header #askgodlogo img {
+  position: relative;
+  display: inline;
+  width: 100%;
+}
+#header #nav {
+  position: relative;
+  display: block;
+  text-align: right;
+}
+#header #nav #navlinks {
+  float: right;
+  width: auto;
+  text-align: right;
+  margin-left: 0.4em;
+}
+#header #nav #navlinks a {
+  display: inline;
+  margin: 0 0 0 .5em;
+}
+#header #nav #navline {
+  overflow: hidden;
+  /* Creates a new block format context, which will make this tag fill the remaining width */
+  background-color: #ffffff;
+  content: '';
+  height: 1px;
+  position: relative;
+  top: 0.6em;
+}
+#header #nav:after {
+  content: '';
+  clear: both;
+  display: block;
 }
 .content {
   position: relative;
   margin: 0 auto;
-  width: 660px;
+  width: 480px;
   max-width: 96%;
   padding: 1em 1em;
+  padding-top: 1em;
   min-height: 100%;
   background-color: transparent;
   /* IE10+ */
 }
 @media all and (max-width: 480px) {
   .content {
-    padding: 1em .4em;
+    padding: 1em .4em 1em;
   }
 }
 .content input[type=text],
@@ -67,7 +177,7 @@ body {
   border-radius: .8em;
   padding: .4em .8em .3em;
   border: 2px solid transparent;
-  font-family: Tahoma, Verdana, Arial;
+  font-family: cabin, Tahoma, Verdana, Arial;
   font-size: 18px;
   margin: 0;
   background-color: #8080ff;
@@ -126,7 +236,7 @@ body {
   background-color: #ffffff;
 }
 .content textarea {
-  height: 12em;
+  height: 10em;
   border-top-right-radius: .5em;
   border-bottom-right-radius: .5em;
 }
@@ -151,18 +261,10 @@ body {
   text-overflow: ellipsis;
   background: purple;
 }
-.content a {
-  color: white;
-  text-decoration: none;
-}
-.content a:hover,
-.content a:focus {
-  text-decoration: underline;
-}
 #indexpage .indexcontainer {
   display: block;
   position: relative;
-  margin-bottom: 1.5em;
+  margin-bottom: 0.5em;
 }
 #indexpage .indexcontainer label.formlabel {
   display: block;
@@ -176,36 +278,31 @@ body {
   text-align: right;
   padding-right: 1em;
 }
+#indexpage .indexcontainer.centeralign {
+  text-align: center;
+  padding: 0 1em;
+}
 #indexpage #aboutcontainer {
   margin-bottom: 1.5em;
 }
-#indexpage #submitcontainer input[type="submit"] {
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-}
-#indexpage #submitcontainer input[type="submit"]:hover,
-#indexpage #submitcontainer input[type="submit"]:focus {
-  text-decoration: underline;
+#indexpage #submitcontainer {
+  margin-top: 1.5em;
 }
 #indexpage input.error,
 #indexpage textarea.error {
-  border: 2px solid #ea1a1a;
+  border: 2px solid #f46f20;
 }
 #indexpage label.error {
-  color: #ea1a1a;
+  color: #f46f20;
   position: absolute;
   top: 0em;
   right: .8em;
   padding: .2em .5em;
-  background-color: rgba(192, 192, 222, 0.7);
   border-top-left-radius: .3em;
   border-top-right-radius: .3em;
   font-size: 15.3px;
   font-weight: bold;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
 }
 @media all and (max-width: 480px) {
   #indexpage label.error {

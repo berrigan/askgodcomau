@@ -20,6 +20,7 @@ class Index {
 
         $model = array(
             'title' => 'AskGod.com.au!',
+            'nav' => 'index',
             'form' => $form
         );
         echo $this->view->render($model);
@@ -44,6 +45,7 @@ class Index {
             }
             catch(\Exception $exSave) {
                 $model = array('title' => 'AskGod.com.au!',
+                    'nav' => 'index',
                     'form' => $indexModel,
                     'forceValidation' => true);
             }
@@ -52,6 +54,7 @@ class Index {
         } else {
 
             $model = array('title' => 'AskGod.com.au!',
+                'nav' => 'index',
                 'form' => $indexModel,
                 'forceValidation' => true);
         }

@@ -14,7 +14,8 @@ class About {
     function GET() {
 
         $model = array(
-            'title' => 'AskGod.com.au!'
+            'title' => 'AskGod.com.au!',
+            'nav' => 'about'
         );
         echo $this->view->render($model);
     }
