@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f7a8cf1-2b75-4721-9e18-bc897b280602" name="Default" comment="Adding vendor ignore for composer.&#10;Use composer install, or composer update -- after installing composer of course.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/CloudAnimator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogin.php" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin.login.html" afterPath="$PROJECT_DIR$/views/admin.login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.html" afterPath="$PROJECT_DIR$/views/footer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/header.html" afterPath="$PROJECT_DIR$/views/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/site.css" afterPath="$PROJECT_DIR$/css/site.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/site.less" afterPath="$PROJECT_DIR$/css/site.less" />
     </list>
     <ignored path="askgodcomau.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,6 +27,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="site.less" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/site.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="163" column="1" selection-start="3315" selection-end="3315" vertical-scroll-proportion="0.4664179" vertical-offset="2070" max-vertical-offset="8280">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CloudAnimator.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/CloudAnimator.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -39,10 +45,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="footer.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/footer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="47" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.56915545" vertical-offset="0" max-vertical-offset="915">
+            <state line="31" column="47" selection-start="1001" selection-end="1001" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="915">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="7" selection-start="372" selection-end="372" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="810">
               <folding />
             </state>
           </provider>
@@ -102,8 +117,6 @@
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Model/DatabaseModelBootstrapper.php" />
         <option value="$PROJECT_DIR$/views/admin.default.html" />
-        <option value="$PROJECT_DIR$/views/header.html" />
-        <option value="$PROJECT_DIR$/css/site.less" />
         <option value="$PROJECT_DIR$/js/fnRunPlaceholderLabel.js" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php" />
@@ -116,6 +129,8 @@
         <option value="$PROJECT_DIR$/views/index.html" />
         <option value="$PROJECT_DIR$/js/CloudAnimator.js" />
         <option value="$PROJECT_DIR$/views/footer.html" />
+        <option value="$PROJECT_DIR$/views/header.html" />
+        <option value="$PROJECT_DIR$/css/site.less" />
       </list>
     </option>
   </component>
@@ -628,20 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/site.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="475" column="0" selection-start="9288" selection-end="9288" vertical-scroll-proportion="-4.125" vertical-offset="7026" max-vertical-offset="7905">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="90" selection-start="277" selection-end="277" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="810">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="16" selection-start="534" selection-end="534" vertical-scroll-proportion="-11.916667" vertical-offset="14" max-vertical-offset="885">
@@ -750,7 +751,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="47" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.56915545" vertical-offset="0" max-vertical-offset="915">
+        <state line="31" column="47" selection-start="1001" selection-end="1001" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="7" selection-start="372" selection-end="372" vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/site.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="163" column="1" selection-start="3315" selection-end="3315" vertical-scroll-proportion="0.4664179" vertical-offset="2070" max-vertical-offset="8280">
           <folding />
         </state>
       </provider>

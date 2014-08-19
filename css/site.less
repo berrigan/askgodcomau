@@ -24,6 +24,10 @@
 @fontSizeSmaller: 18px;
 
 
+@backgroundImage: url("../img/bg.clouds.2332.1448.jpg");
+@backgroundFullWidth: 2332px;
+@backgroundFullHeight: 1448px;
+
 
 
 // MIXINS
@@ -116,6 +120,10 @@ html {
     height: 100%;
 }
 
+
+
+
+
 body {
     position: relative;
     margin: 0;
@@ -129,7 +137,7 @@ body {
 
     background-color: #0044ba;
 
-    background-image: url('../img/bg.clouds.2332.1448.jpg');
+    background-image: @backgroundImage;
     background-repeat: repeat;
     background-position: center top;
     // background-size: 100% auto;
@@ -140,6 +148,23 @@ body {
         background-size: auto auto;
     }
 }
+
+
+#skyoverlay
+{
+    position: fixed;
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+
+    background-image: @backgroundImage;
+    background-repeat: repeat;
+    background-position: center top;
+    background-size: @backgroundFullWidth @backgroundFullHeight;
+    opacity: 0.3;
+}
+
+
+
 
 #clouds
 {

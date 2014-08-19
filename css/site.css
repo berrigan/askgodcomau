@@ -40,13 +40,25 @@ body {
   font-size: 18px;
   color: #ffffff;
   background-color: #0044ba;
-  background-image: url('../img/bg.clouds.2332.1448.jpg');
+  background-image: url("../img/bg.clouds.2332.1448.jpg");
   background-repeat: repeat;
   background-position: center top;
   background-size: auto auto;
 }
 body.verticallarger {
   background-size: auto auto;
+}
+#skyoverlay {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-image: url("../img/bg.clouds.2332.1448.jpg");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 2332px 1448px;
+  opacity: 0.3;
 }
 #clouds {
   position: fixed;
