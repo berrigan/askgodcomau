@@ -6,14 +6,20 @@ require_once('config.php');
 //    $view = $twig->loadTemplate('index.html');
 //    echo $view->render(array('title' => 'AskGod.com.au!'));
 
-
 $nsControllers = '\\AskGodComAu\\Controllers\\';
 
 $urls = array(
     '/' => $nsControllers . 'Index',
     '/about' => $nsControllers . 'About',
     '/questions' => $nsControllers . 'Questions',
-    '/questions/([0-9]+)' => $nsControllers . 'Questions'
+    '/questions/([0-9]+)' => $nsControllers . 'Questions',
+
+    // ADMIN
+    '/admin' => $nsControllers . 'AdminRedirect',
+    '/admin/' => $nsControllers . 'AdminDefault',
+    '/admin/default' => $nsControllers . 'AdminDefault',
+    '/admin/login' => $nsControllers . 'AdminLogin',
+    '/admin/logout' => $nsControllers . 'AdminLogout'
 );
 
 glue::stick($urls);

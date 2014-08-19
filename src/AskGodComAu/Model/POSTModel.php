@@ -19,7 +19,9 @@ abstract class POSTModel {
     private function consumeData($data) {
         $fields = $this->getFields();
         foreach ($fields as $field) {
-            $this->$field = $data[$field];
+            if (isset($data[$field])) {
+                $this->$field = $data[$field];
+            }
         }
     }
 

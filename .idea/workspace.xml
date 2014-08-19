@@ -2,13 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0f7a8cf1-2b75-4721-9e18-bc897b280602" name="Default" comment="Adding vendor ignore for composer.&#10;Use composer install, or composer update -- after installing composer of course.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/nav.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AskGodComAu/Controllers/About.php" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/About.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AskGodComAu/Controllers/Index.php" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/Index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AskGodComAu/Controllers/Questions.php" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/Questions.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminDefault.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogin.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AskGodComAu/Model/AdminLoginModel.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogout.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminRedirect.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AskGodComAu/Model/DatabaseModelBootstrapper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AskGodComAu/Core/SessionHelper.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin.default.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/admin.login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/fnRunPlaceholderLabel.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php" afterPath="$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php" afterPath="$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.php" afterPath="$PROJECT_DIR$/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/footer.html" afterPath="$PROJECT_DIR$/views/footer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/header.html" afterPath="$PROJECT_DIR$/views/header.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.html" afterPath="$PROJECT_DIR$/views/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/jquery.velocity.min.js" afterPath="$PROJECT_DIR$/js/jquery.velocity.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modelsetup.php" afterPath="$PROJECT_DIR$/modelsetup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/nav.html" afterPath="$PROJECT_DIR$/views/nav.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/site.css" afterPath="$PROJECT_DIR$/css/site.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/site.less" afterPath="$PROJECT_DIR$/css/site.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -34,40 +47,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="site.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/site.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="27" selection-start="53" selection-end="53" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="7275">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="site.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/site.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="21" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="5250">
-              <folding>
-                <marker date="1408030306240" expanded="true" signature="768:962" placeholder="{...}" />
-                <marker date="1408030306240" expanded="true" signature="3332:3647" placeholder="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="3" selection-start="466" selection-end="466" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="390">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="37" selection-start="1199" selection-end="1199" vertical-scroll-proportion="-19.0" vertical-offset="249" max-vertical-offset="1050">
+            <state line="33" column="20" selection-start="727" selection-end="739" vertical-scroll-proportion="-10.916667" vertical-offset="233" max-vertical-offset="1050">
               <folding>
                 <element signature="e#41#77#0" expanded="true" />
               </folding>
@@ -75,10 +58,70 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="header.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/header.html">
+      <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="18" selection-start="510" selection-end="510" vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="780">
+            <state line="21" column="53" selection-start="734" selection-end="734" vertical-scroll-proportion="0.3855569" vertical-offset="0" max-vertical-offset="817">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.login.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin.login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="66" selection-start="135" selection-end="135" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="780">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminLogin.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogin.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="40" selection-start="513" selection-end="513" vertical-scroll-proportion="-12.166667" vertical-offset="38" max-vertical-offset="930">
+              <folding>
+                <element signature="e#42#80#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminLogout.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="0" selection-start="129" selection-end="129" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="390">
+              <folding>
+                <element signature="e#42#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/nav.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="23" selection-start="108" selection-end="108" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="495">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminDefault.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminDefault.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="21" selection-start="699" selection-end="714" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="600">
+              <folding>
+                <element signature="e#42#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminRedirect.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminRedirect.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="4" selection-start="104" selection-end="175" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="240">
               <folding />
             </state>
           </provider>
@@ -87,43 +130,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="27" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1320">
+            <state line="7" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="915">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="About.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/About.php">
+      <file leaf-file-name="AdminUtil.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="28" selection-start="385" selection-end="385" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="435">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Questions.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/Questions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="31" selection-start="404" selection-end="404" vertical-scroll-proportion="0.31835207" vertical-offset="0" max-vertical-offset="801">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/nav.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="23" selection-start="177" selection-end="186" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="345">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="questions.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/questions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="27" selection-start="337" selection-end="337" vertical-scroll-proportion="-13.125" vertical-offset="0" max-vertical-offset="405">
+            <state line="22" column="5" selection-start="622" selection-end="622" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="885">
               <folding />
             </state>
           </provider>
@@ -159,7 +175,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Gruntfile.js" />
         <option value="$PROJECT_DIR$/css/site.css" />
-        <option value="$PROJECT_DIR$/js/jquery.velocity.min.js" />
         <option value="$PROJECT_DIR$/js/velocity.ui.min.js" />
         <option value="$PROJECT_DIR$/js/polyfills.js" />
         <option value="$PROJECT_DIR$/js/polyfills/string.trim.js" />
@@ -169,23 +184,34 @@
         <option value="$PROJECT_DIR$/js/jquery.validate.min.js" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Model/Userquestion.php" />
-        <option value="$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php" />
-        <option value="$PROJECT_DIR$/config.php" />
-        <option value="$PROJECT_DIR$/modelsetup.php" />
-        <option value="$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Model/IndexModel.php" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Core/RedbeanHelpers.php" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Core/HttpUtility.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/views/questions.html" />
-        <option value="$PROJECT_DIR$/views/footer.html" />
-        <option value="$PROJECT_DIR$/views/index.html" />
-        <option value="$PROJECT_DIR$/views/header.html" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Controllers/Index.php" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Controllers/About.php" />
-        <option value="$PROJECT_DIR$/views/nav.html" />
-        <option value="$PROJECT_DIR$/css/site.less" />
         <option value="$PROJECT_DIR$/src/AskGodComAu/Controllers/Questions.php" />
+        <option value="$PROJECT_DIR$/js/jquery.velocity.min.js" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminRedirect.php" />
+        <option value="$PROJECT_DIR$/modelsetup.php" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Core/SessionHelper.php" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Model/AdminLoginModel.php" />
+        <option value="$PROJECT_DIR$/views/footer.html" />
+        <option value="$PROJECT_DIR$/config.php" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Model/DatabaseModelBootstrapper.php" />
+        <option value="$PROJECT_DIR$/views/admin.default.html" />
+        <option value="$PROJECT_DIR$/views/index.html" />
+        <option value="$PROJECT_DIR$/views/header.html" />
+        <option value="$PROJECT_DIR$/css/site.less" />
+        <option value="$PROJECT_DIR$/js/fnRunPlaceholderLabel.js" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php" />
+        <option value="$PROJECT_DIR$/views/admin.login.html" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogout.php" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminDefault.php" />
+        <option value="$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogin.php" />
+        <option value="$PROJECT_DIR$/views/nav.html" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -193,8 +219,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="1839" />
-    <option name="height" value="943" />
+    <option name="width" value="1855" />
+    <option name="height" value="959" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -271,6 +297,28 @@
               <option name="myItemId" value="AskGodComAu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="askgodcomau" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="askgodcomau" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AskGodComAu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -291,6 +339,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="askgodcomau" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="askgodcomau" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -436,29 +498,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1839" height="943" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="959" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.4997242" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19866444" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19911748" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.69608384" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3286385" sideWeight="0.30391616" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718894" sideWeight="0.30391616" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3647587" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884398" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -486,67 +548,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modelsetup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="366" selection-end="366" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="870" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="473" selection-end="473" vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240" />
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="460" selection-end="460" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="615">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="2" selection-start="61" selection-end="61" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="375" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240" />
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="240" />
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.WebIde70/system/extLibs/http_code.jquery.com_jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="3" selection-start="282" selection-end="282" vertical-scroll-proportion="0.20833333" vertical-offset="0" max-vertical-offset="154710" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="38" selection-start="204" selection-end="204" vertical-scroll-proportion="0.19886364" vertical-offset="0" max-vertical-offset="528" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="839" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/askgodcomau.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864" />
@@ -560,11 +561,6 @@
     <entry file="file://$PROJECT_DIR$/js/velocity.ui.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="714" selection-end="714" vertical-scroll-proportion="0.16304348" vertical-offset="0" max-vertical-offset="828" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jquery.velocity.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="828" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/bootstrap.js">
@@ -581,16 +577,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/polyfills.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
+        <state line="1" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/polyfills/string.trim.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="1" selection-start="127" selection-end="127" vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825">
-          <folding />
-        </state>
+        <state line="4" column="1" selection-start="127" selection-end="127" vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825" />
       </provider>
     </entry>
     <entry file="phar://$PROJECT_DIR$/libs/redbean/rb.phar/loader.php">
@@ -609,16 +601,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="5" selection-start="2342" selection-end="2342" vertical-scroll-proportion="1.2202754" vertical-offset="0" max-vertical-offset="1350">
-          <folding />
-        </state>
+        <state line="65" column="5" selection-start="2342" selection-end="2342" vertical-scroll-proportion="1.2202754" vertical-offset="0" max-vertical-offset="1350" />
       </provider>
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
@@ -626,39 +614,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.13108614" vertical-offset="0" max-vertical-offset="801">
-          <folding />
-        </state>
+        <state line="7" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.13108614" vertical-offset="0" max-vertical-offset="801" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/gluephp/glue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="1" selection-start="2065" selection-end="2065" vertical-scroll-proportion="1.3857678" vertical-offset="0" max-vertical-offset="1200">
-          <folding />
-        </state>
+        <state line="74" column="1" selection-start="2065" selection-end="2065" vertical-scroll-proportion="1.3857678" vertical-offset="0" max-vertical-offset="1200" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="66" selection-end="66" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="315" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jquery.validate.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="54" selection-start="136" selection-end="136" vertical-scroll-proportion="0.036945812" vertical-offset="0" max-vertical-offset="812">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
+        <state line="2" column="54" selection-start="136" selection-end="136" vertical-scroll-proportion="0.036945812" vertical-offset="0" max-vertical-offset="812" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="17" selection-start="99" selection-end="99" vertical-scroll-proportion="0.09363296" vertical-offset="0" max-vertical-offset="801">
-          <folding />
-        </state>
+        <state line="5" column="17" selection-start="99" selection-end="99" vertical-scroll-proportion="0.09363296" vertical-offset="0" max-vertical-offset="801" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/Admin.php">
@@ -675,30 +651,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="0" selection-start="784" selection-end="784" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="645">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Core/RedbeanHelpers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="55" selection-start="115" selection-end="115" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/IndexModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="59" selection-start="259" selection-end="259" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="197" selection-end="197" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="855">
           <folding />
         </state>
       </provider>
@@ -710,30 +665,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modelsetup.php">
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/About.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="137" selection-end="137" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="870">
+        <state line="17" column="28" selection-start="385" selection-end="385" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="435">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php">
+    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-less/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="165" selection-end="165" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="315">
-          <folding />
-        </state>
+        <state line="9" column="17" selection-start="262" selection-end="262" vertical-scroll-proportion="0.26574802" vertical-offset="0" max-vertical-offset="1020" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-less/node_modules/less/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="57" selection-start="456" selection-end="456" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="375">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0629921" vertical-offset="540" max-vertical-offset="1695" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/footer.html">
+    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-less/node_modules/less/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="26" selection-start="356" selection-end="356" vertical-scroll-proportion="-8.75" vertical-offset="0" max-vertical-offset="1260">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7490119" vertical-offset="379" max-vertical-offset="885" />
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="21" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.49876848" vertical-offset="1020" max-vertical-offset="5250">
           <folding />
         </state>
       </provider>
@@ -745,33 +704,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.html">
+    <entry file="file://$PROJECT_DIR$/js/jquery.velocity.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="27" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="1320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="18" selection-start="510" selection-end="510" vertical-scroll-proportion="-18.75" vertical-offset="0" max-vertical-offset="780">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="37" selection-start="1199" selection-end="1199" vertical-scroll-proportion="-19.0" vertical-offset="249" max-vertical-offset="1050">
+        <state line="1" column="0" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="105">
           <folding>
-            <element signature="e#41#77#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/About.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="28" selection-start="385" selection-end="385" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="435">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -782,57 +720,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-less/package.json">
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/Questions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="262" selection-end="262" vertical-scroll-proportion="0.26574802" vertical-offset="0" max-vertical-offset="1020">
+        <state line="17" column="31" selection-start="404" selection-end="404" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="540">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-less/node_modules/less/package.json">
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Core/SessionHelper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.0629921" vertical-offset="540" max-vertical-offset="1695">
+        <state line="7" column="5" selection-start="126" selection-end="126" vertical-scroll-proportion="0.12851897" vertical-offset="0" max-vertical-offset="817">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/grunt-contrib-less/node_modules/less/README.md">
+    <entry file="file://$PROJECT_DIR$/modelsetup.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.7490119" vertical-offset="379" max-vertical-offset="885">
+        <state line="19" column="7" selection-start="390" selection-end="390" vertical-scroll-proportion="0.3488372" vertical-offset="0" max-vertical-offset="817">
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/AdminLoginModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="36" selection-start="458" selection-end="458" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="465">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/site.css">
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/DatabaseModelBootstrapper.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="21" selection-start="2058" selection-end="2058" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="5250">
-          <folding>
-            <marker date="1408030306240" expanded="true" signature="768:962" placeholder="{...}" />
-            <marker date="1408030306240" expanded="true" signature="3332:3647" placeholder="{...}" />
-          </folding>
+        <state line="8" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="435">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin.default.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="12" selection-start="162" selection-end="162" vertical-scroll-proportion="0.14687882" vertical-offset="0" max-vertical-offset="817">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="24" selection-start="432" selection-end="432" vertical-scroll-proportion="0.36719707" vertical-offset="0" max-vertical-offset="817">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/site.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="27" selection-start="53" selection-end="53" vertical-scroll-proportion="-1.875" vertical-offset="0" max-vertical-offset="7275">
+        <state line="475" column="0" selection-start="9288" selection-end="9288" vertical-scroll-proportion="-4.125" vertical-offset="7026" max-vertical-offset="7905">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="90" selection-start="277" selection-end="277" vertical-scroll-proportion="-6.25" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="395" selection-end="395" vertical-scroll-proportion="-10.625" vertical-offset="0" max-vertical-offset="1875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="915">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/POSTModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="16" selection-start="534" selection-end="534" vertical-scroll-proportion="-11.916667" vertical-offset="14" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fnRunPlaceholderLabel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="28" selection-start="233" selection-end="233" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin.login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="66" selection-start="135" selection-end="135" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Model/IndexModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="46" selection-start="463" selection-end="463" vertical-scroll-proportion="0.25703794" vertical-offset="0" max-vertical-offset="817">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminRedirect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="4" selection-start="104" selection-end="175" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Core/AdminUtil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="5" selection-start="622" selection-end="622" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="129" selection-end="129" vertical-scroll-proportion="-3.75" vertical-offset="0" max-vertical-offset="390">
+          <folding>
+            <element signature="e#42#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminDefault.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="21" selection-start="699" selection-end="714" vertical-scroll-proportion="-17.5" vertical-offset="0" max-vertical-offset="600">
+          <folding>
+            <element signature="e#42#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/AdminLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="40" selection-start="513" selection-end="513" vertical-scroll-proportion="-12.166667" vertical-offset="38" max-vertical-offset="930">
+          <folding>
+            <element signature="e#42#80#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/nav.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="23" selection-start="177" selection-end="186" vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="345">
+        <state line="5" column="23" selection-start="108" selection-end="108" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="495">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/Questions.php">
+    <entry file="file://$PROJECT_DIR$/src/AskGodComAu/Controllers/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="31" selection-start="404" selection-end="404" vertical-scroll-proportion="0.31835207" vertical-offset="0" max-vertical-offset="801">
+        <state line="33" column="20" selection-start="727" selection-end="739" vertical-scroll-proportion="-10.916667" vertical-offset="233" max-vertical-offset="1050">
+          <folding>
+            <element signature="e#41#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="53" selection-start="734" selection-end="734" vertical-scroll-proportion="0.3855569" vertical-offset="0" max-vertical-offset="817">
           <folding />
         </state>
       </provider>

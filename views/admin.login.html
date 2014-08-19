@@ -1,0 +1,47 @@
+{% include 'header.html' %}
+
+<div class="content" id="adminlogin">
+
+
+    <form id="adminloginform" action="/admin/login" method="post">
+
+
+        <div class="container">
+            <label class="formlabel" for="username">MY USERNAME IS _</label>
+            <input id="username" name="username" value="{{ form.username }}" type="text" placeholder="MY USERNAME IS _" tabindex="1" required="true" />
+        </div>
+
+        <div class="container">
+            <label class="formlabel" for="password">MY PASSWORD IS _</label>
+            <input id="password" name="password"  value="{{ form.password }}" type="password" placeholder="MY PASSWORD IS _" tabindex="2" required="true" />
+        </div>
+
+        <div class="container centeralign" id="submitcontainer">
+            <input id="submit" class="submit button" type="submit" value="SUBMIT" name="submit" />
+        </div>
+
+    </form>
+
+    <script>
+
+        window.pagejs = function() {
+
+            var $form = $("#adminloginform");
+            var formValidator = $form.validate();
+
+            // {% if forceValidation %}
+            $form.valid();
+            // {% endif %}
+
+
+            $('input, textarea').each(function() {
+                window.fnRunPlaceholderLabel(this);
+            });
+
+        };
+
+    </script>
+
+</div>
+
+{% include 'footer.html' %}

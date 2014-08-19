@@ -3,11 +3,11 @@
   margin: 0 auto;
   width: 480px;
   max-width: 96%;
-  padding: 1em 1em;
+  padding: 1em 1em 3em 1em;
 }
 @media all and (max-width: 480px) {
   .centerColumn {
-    padding: 1em .4em 1em;
+    padding: 1em .4em 3em;
   }
 }
 @font-face {
@@ -39,14 +39,56 @@ body {
   font-family: cabin, Tahoma, Verdana, Arial;
   font-size: 18px;
   color: #ffffff;
-  background: #2182ff;
-  background-image: url('../img/clouds.500.dither90.lossy10.149frames.12fps.gif');
+  background-color: #0044ba;
+  background-image: url('../img/bg.clouds.2332.1448.jpg');
   background-repeat: repeat;
-  background-position: center 0;
-  background-size: 100% auto;
+  background-position: center top;
+  background-size: auto auto;
 }
 body.verticallarger {
-  background-size: auto 100%;
+  background-size: auto auto;
+}
+#clouds {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+#clouds .cloud {
+  -webkit-transform: translatez(0);
+  -moz-transform: translatez(0);
+  -ms-transform: translatez(0);
+  -o-transform: translatez(0);
+  transform: translatez(0);
+  translateZ: 0;
+  position: absolute;
+}
+#clouds .cloud img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+#clouds .cloud1 {
+  width: 26.11492281%;
+  left: -100%;
+}
+#clouds .cloud2 {
+  width: 46.69811321%;
+  left: -100%;
+}
+#clouds .cloud3 {
+  width: 43.91080617%;
+  left: -100%;
+}
+#clouds .cloud4 {
+  width: 63.93653516%;
+  left: -100%;
+}
+#clouds .cloud5 {
+  width: 50.21440823%;
+  left: -100%;
 }
 a {
   color: white;
@@ -57,6 +99,7 @@ a:focus {
   text-decoration: underline;
 }
 .button {
+  -webkit-appearance: none;
   position: relative;
   display: inline-block;
   border-radius: 0px;
@@ -97,13 +140,13 @@ a:focus {
   margin: 0 auto;
   width: 480px;
   max-width: 96%;
-  padding: 1em 1em;
+  padding: 1em 1em 3em 1em;
   padding-top: 2em;
   padding-bottom: 0;
 }
 @media all and (max-width: 480px) {
   #header {
-    padding: 1em .4em 1em;
+    padding: 1em .4em 3em;
   }
 }
 @media all and (max-width: 480px) {
@@ -158,7 +201,7 @@ a:focus {
   margin: 0 auto;
   width: 480px;
   max-width: 96%;
-  padding: 1em 1em;
+  padding: 1em 1em 3em 1em;
   padding-top: 1em;
   min-height: 100%;
   background-color: transparent;
@@ -166,11 +209,12 @@ a:focus {
 }
 @media all and (max-width: 480px) {
   .content {
-    padding: 1em .4em 1em;
+    padding: 1em .4em 3em;
   }
 }
 .content input[type=text],
 .content input[type=email],
+.content input[type=password],
 .content textarea {
   -webkit-appearance: none;
   display: block;
@@ -189,12 +233,14 @@ a:focus {
 @media all and (max-width: 480px) {
   .content input[type=text],
   .content input[type=email],
+  .content input[type=password],
   .content textarea {
     font-size: 18px;
   }
 }
 .content input[type=text]:focus,
 .content input[type=email]:focus,
+.content input[type=password]:focus,
 .content textarea:focus {
   outline: none;
   background-color: #ffffff;
@@ -203,35 +249,41 @@ a:focus {
 }
 .content input[type=text]:focus::-webkit-input-placeholder,
 .content input[type=email]:focus::-webkit-input-placeholder,
+.content input[type=password]:focus::-webkit-input-placeholder,
 .content textarea:focus::-webkit-input-placeholder {
   opacity: 1;
   color: #666666;
 }
 .content input[type=text]:focus::-moz-placeholder,
 .content input[type=email]:focus::-moz-placeholder,
+.content input[type=password]:focus::-moz-placeholder,
 .content textarea:focus::-moz-placeholder {
   opacity: 1;
   color: #666666;
 }
 .content input[type=text]:focus:-moz-placeholder,
 .content input[type=email]:focus:-moz-placeholder,
+.content input[type=password]:focus:-moz-placeholder,
 .content textarea:focus:-moz-placeholder {
   opacity: 1;
   color: #666666;
 }
 .content input[type=text]:focus::-ms-input-placeholder,
 .content input[type=email]:focus::-ms-input-placeholder,
+.content input[type=password]:focus::-ms-input-placeholder,
 .content textarea:focus::-ms-input-placeholder {
   opacity: 1;
   color: #666666;
 }
 .content input[type=text]::autocomplete,
 .content input[type=email]::autocomplete,
+.content input[type=password]::autocomplete,
 .content textarea::autocomplete {
   background-color: #ffffff;
 }
 .content input[type=text]::autofill,
 .content input[type=email]::autofill,
+.content input[type=password]::autofill,
 .content textarea::autofill {
   background-color: #ffffff;
 }
@@ -239,6 +291,29 @@ a:focus {
   height: 10em;
   border-top-right-radius: .5em;
   border-bottom-right-radius: .5em;
+  overflow: auto;
+  background-color: rgba(216, 216, 244, 0.85);
+  color: #333333;
+  /* IE10+ */
+}
+.content textarea::-webkit-input-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+.content textarea::-moz-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+.content textarea:-moz-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+.content textarea::-ms-input-placeholder {
+  opacity: 1;
+  color: #333333;
+}
+.content textarea:focus {
+  background-color: #ffffff;
 }
 .content ::-webkit-input-placeholder {
   opacity: 1;
@@ -261,12 +336,12 @@ a:focus {
   text-overflow: ellipsis;
   background: purple;
 }
-#indexpage .indexcontainer {
+.content .container {
   display: block;
   position: relative;
   margin-bottom: 0.5em;
 }
-#indexpage .indexcontainer label.formlabel {
+.content .container label.formlabel {
   display: block;
   position: relative;
   padding: .2em 1em;
@@ -274,25 +349,23 @@ a:focus {
   font-weight: bold;
   opacity: 0;
 }
-#indexpage .indexcontainer.rightalign {
+.content .container.rightalign {
   text-align: right;
   padding-right: 1em;
 }
-#indexpage .indexcontainer.centeralign {
+.content .container.centeralign {
   text-align: center;
   padding: 0 1em;
 }
-#indexpage #aboutcontainer {
-  margin-bottom: 1.5em;
+.content form {
+  position: relative;
+  display: block;
 }
-#indexpage #submitcontainer {
-  margin-top: 1.5em;
-}
-#indexpage input.error,
-#indexpage textarea.error {
+.content input.error,
+.content textarea.error {
   border: 2px solid #f46f20;
 }
-#indexpage label.error {
+.content label.error {
   color: #f46f20;
   position: absolute;
   top: 0em;
@@ -305,7 +378,7 @@ a:focus {
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.6);
 }
 @media all and (max-width: 480px) {
-  #indexpage label.error {
+  .content label.error {
     position: relative;
     border-top-left-radius: 0em;
     border-top-right-radius: 0em;
@@ -318,27 +391,9 @@ a:focus {
     margin: 0em auto 0;
   }
 }
-#indexpage #question {
-  background-color: rgba(216, 216, 244, 0.85);
-  color: #333333;
-  /* IE10+ */
+#indexpage #submitcontainer {
+  margin-top: 1.5em;
 }
-#indexpage #question::-webkit-input-placeholder {
-  opacity: 1;
-  color: #333333;
-}
-#indexpage #question::-moz-placeholder {
-  opacity: 1;
-  color: #333333;
-}
-#indexpage #question:-moz-placeholder {
-  opacity: 1;
-  color: #333333;
-}
-#indexpage #question::-ms-input-placeholder {
-  opacity: 1;
-  color: #333333;
-}
-#indexpage #question:focus {
-  background-color: #ffffff;
+#adminlogin #submitcontainer {
+  margin-top: 1.5em;
 }

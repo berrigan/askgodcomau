@@ -6,25 +6,25 @@
     <form id="indexform" action="/" method="post">
 
 
-        <div class="indexcontainer">
+        <div class="container">
             <label class="formlabel" for="question">MY QUESTION IS _</label>
             <textarea id="question" name="question" placeholder="MY QUESTION IS _" tabindex="1"required="true" >{{ form.question }}</textarea>
         </div>
 
-        <div class="indexcontainer">
+        <div class="container">
             <label class="formlabel" for="name">MY NAME IS _</label>
             <input id="name" name="name" value="{{ form.name }}" type="text" placeholder="MY NAME IS _" tabindex="2" required="true" />
         </div>
 
-        <div class="indexcontainer">
+        <div class="container">
             <label class="formlabel" for="email">MY EMAIL IS _</label>
             <input id="email" name="email"  value="{{ form.email }}" type="email" placeholder="MY EMAIL IS _" tabindex="3" required="true" />
         </div>
 
 
 
-        <div class="indexcontainer centeralign" id="submitcontainer">
-            <input class="submit button" type="submit" value="SUBMIT" name="submit" />
+        <div class="container centeralign" id="submitcontainer">
+            <input id="submit" class="submit button" type="submit" value="SUBMIT" name="submit" />
         </div>
 
     </form>
@@ -32,46 +32,19 @@
 
 
     <script>
+
         window.pagejs = function() {
 
-                var $form = $("#indexform");
-                var formValidator = $form.validate();
+            var $form = $("#indexform");
+            var formValidator = $form.validate();
 
-                {% if forceValidation %}
-                    $form.valid();
-                {% endif %}
+            // {% if forceValidation %}
+                $form.valid();
+            // {% endif %}
 
-
-                var placeholderNotEmpty = function(valText, placeholderText) {
-                    return (valText != '' && valText != placeholderText);
-                };
-                var fnRunPlaceholderLabel = function(elem) {
-
-                    var $this = $(elem);
-                    var $label = $this.siblings('label.formlabel');
-                    var placeholderText = $this.attr('placeholder');
-
-                    if (placeholderNotEmpty($this.val(), placeholderText)) {
-                        $label.fadeTo(200, 1);
-                    }
-
-                    var fnKeyup = function() {
-                        if (placeholderNotEmpty($this.val(), placeholderText)) {
-                            $label.fadeTo(200, 1);
-                        } else {
-                            $label.fadeTo(200, 0);
-                        }
-                    };
-//                var fnBlur = function() {
-//
-//                };
-
-                    $this.on('keyup', fnKeyup);
-                };
-
-                $('input, textarea').each(function() {
-                    fnRunPlaceholderLabel(this);
-                });
+            $('input, textarea').each(function() {
+                window.fnRunPlaceholderLabel(this);
+            });
 
         };
 

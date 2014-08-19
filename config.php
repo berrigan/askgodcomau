@@ -1,22 +1,25 @@
 <?php
 
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+
 // setup some globals for us to use throughout
 define('ROOTDIR', dirname(__FILE__));
+
+//with namespace Model
+define('REDBEAN_MODEL_PREFIX', '\\AskGodComAu\\Model\\');
 
 
 // include all our LIBS
 require_once(ROOTDIR . '/vendor/autoload.php');
-
 require_once(ROOTDIR . '/libs/gluephp/glue.php');
-
-//with namespace Model
-define('REDBEAN_MODEL_PREFIX', '\\AskGodComAu\\Model\\');
 require_once(ROOTDIR . '/libs/redbean/rb.phar');
 
 
-// include our necessary CORE
-// require_once(ROOTDIR . '/src/AskGodComAu/Core/TwigFactory.php');
-
+// START Session too ;-)
+\AskGodComAu\Core\SessionHelper::Start();
 
 
 class AskGodConfig
@@ -32,6 +35,4 @@ $config = new AskGodConfig();
 R::setup('mysql:host=' . $config->db_server .';dbname=' . $config->db_dbname,
     $config->db_username, $config->db_password);
 
-
-require_once(ROOTDIR . '/modelsetup.php');
-
+\AskGodComAu\Model\DatabaseModelBootstrapper::Bootstrap();

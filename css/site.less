@@ -74,19 +74,12 @@
     width: @mainColumnWidth;
     max-width: 96%;
 
-    padding: 1em 1em; // margin-collapse fix as well
+    padding: 1em 1em 3em 1em; // margin-collapse fix as well
 
     @media all and (max-width: @smallDeviceMediaWidth) {
-        padding: 1em .4em 1em;
+        padding: 1em .4em 3em;
     }
 }
-
-
-
-
-
-
-
 
 
 //
@@ -134,17 +127,69 @@ body {
     font-size: @fontSize;
     color: #ffffff;
 
-    background: #2182ff;
+    background-color: #0044ba;
 
-    background-image: url('../img/clouds.500.dither90.lossy10.149frames.12fps.gif');
+    background-image: url('../img/bg.clouds.2332.1448.jpg');
     background-repeat: repeat;
-    background-position: center 0;
-    background-size: 100% auto;
+    background-position: center top;
+    // background-size: 100% auto;
+    background-size: auto auto;
 
     &.verticallarger {
-        background-size: auto 100%;
+        // background-size: auto 100%;
+        background-size: auto auto;
     }
 }
+
+#clouds
+{
+    position: fixed;
+    top: 0px; bottom: 0px;
+    left: 0px; right: 0px;
+
+    .cloud {
+
+        -webkit-transform: translatez(0);
+        -moz-transform: translatez(0);
+        -ms-transform: translatez(0);
+        -o-transform: translatez(0);
+        transform: translatez(0);
+
+        translateZ: 0;
+        position: absolute;
+
+        img {
+            position: absolute;
+            top: 0px; left: 0px;
+            width: 100%;
+        }
+    }
+
+    @fullWidth: 2332;
+    @cloudWidth1: 609 / @fullWidth * 100%;
+    @cloudWidth2: 1089 / @fullWidth * 100%;
+    @cloudWidth3: 1024 / @fullWidth * 100%;
+    @cloudWidth4: 1491 / @fullWidth * 100%;
+    @cloudWidth5: 1171 / @fullWidth * 100%;
+
+    .cloud1 { width: @cloudWidth1; left: -100%; }
+    .cloud2 { width: @cloudWidth2; left: -100%; }
+    .cloud3 { width: @cloudWidth3; left: -100%; }
+    .cloud4 { width: @cloudWidth4; left: -100%; }
+    .cloud5 { width: @cloudWidth5; left: -100%; }
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 //
@@ -163,6 +208,8 @@ a {
 
 
 .button {
+
+    -webkit-appearance: none;
 
     position: relative;
     display: inline-block;
@@ -294,21 +341,7 @@ a {
 }
 
 
-
-
-
 .content {
-
-//    position: relative;
-//    margin: 0 auto;
-//    width: 660px;
-//    max-width: 96%;
-//
-//    padding: 1em 1em 3em; // margin-collapse fix as well
-//
-//    @media all and (max-width: @smallDeviceMediaWidth) {
-//        padding: 1em .4em 3em;
-//    }
 
     .centerColumn();
 
@@ -317,7 +350,7 @@ a {
     min-height: 100%;
     background-color: transparent;
 
-    input[type=text], input[type=email], textarea {
+    input[type=text], input[type=email], input[type=password], textarea {
 
         -webkit-appearance: none;
 
@@ -364,6 +397,17 @@ a {
         height: 10em;
         border-top-right-radius: .5em;
         border-bottom-right-radius: .5em;
+        overflow: auto;
+
+        background-color: rgba(216, 216, 244, 0.85);
+        color: #333333;
+
+        .placeholderOverrides(1, #333333);
+
+        &:focus {
+            background-color: rgb(255,255,255);
+        }
+
     }
 
     .placeholderOverridesChildren(1, #ffffff);
@@ -375,18 +419,8 @@ a {
     }
 
 
-}
 
-
-
-
-
-
-
-// index
-#indexpage {
-
-    .indexcontainer {
+    .container {
 
         display: block;
         position: relative;
@@ -401,8 +435,6 @@ a {
             opacity: 0;
         }
 
-
-
         &.rightalign {
             text-align: right;
             padding-right: 1em;
@@ -415,12 +447,10 @@ a {
 
     }
 
-    #aboutcontainer {
-        margin-bottom: 1.5em;
-    }
 
-    #submitcontainer {
-        margin-top: 1.5em;
+    form {
+        position: relative;
+        display: block;
     }
 
 
@@ -459,18 +489,30 @@ a {
             width: 85%;
             margin: 0em auto 0;
         }
-
     }
 
-    #question {
-        background-color: rgba(216, 216, 244, 0.85);
-        color: #333333;
 
-        .placeholderOverrides(1, #333333);
 
-        &:focus {
-            background-color: rgb(255,255,255);
-        }
+}
+
+
+
+
+
+// index
+#indexpage {
+
+    #submitcontainer {
+        margin-top: 1.5em;
+    }
+
+}
+
+
+#adminlogin {
+
+    #submitcontainer {
+        margin-top: 1.5em;
     }
 
 }
