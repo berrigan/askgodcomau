@@ -38,9 +38,9 @@
             var $form = $("#indexform");
             var formValidator = $form.validate();
 
-            // {% if forceValidation %}
+            {% if forceValidation %}
                 $form.valid();
-            // {% endif %}
+            {% endif %}
 
             $('input, textarea').each(function() {
                 window.fnRunPlaceholderLabel(this);

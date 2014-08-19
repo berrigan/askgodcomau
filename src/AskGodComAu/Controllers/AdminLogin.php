@@ -44,11 +44,15 @@ class AdminLogin {
             }
         }
 
+        // reset password field at least ..
+        $form->password = '';
+
         $model = array(
             'title' => 'AskGod.com.au!',
             'nav' => 'AdminLogin',
             'form' => $form,
-            'error' => $error
+            'error' => $error,
+            'forceValidation' => true
         );
         echo $this->view->render($model);
     }
