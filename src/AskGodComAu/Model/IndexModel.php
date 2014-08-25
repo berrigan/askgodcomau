@@ -7,23 +7,23 @@ class IndexModel extends POSTModel {
     public function getFilters() { return self::$filters; }
 
     private static $fields = array(
-        'name', 'email', 'question'
+        'name', 'email', 'questiontext'
     );
 
     private static $validations = array(
         'name'      => 'required',
         'email'     => 'required|valid_email',
-        'question'  => 'required'
+        'questiontext'  => 'required'
     );
 
     private static $filters = array(
         'name'      => 'trim|sanitize_string',
         'email'     => 'trim|sanitize_email',
-        'question'  => 'trim|sanitize_string'
+        'questiontext'  => 'trim|sanitize_string'
     );
 
     public $name = '';
     public $email = '';
-    public $question = '';
+    public $questiontext = '';
 
 }

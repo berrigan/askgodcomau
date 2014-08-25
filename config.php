@@ -24,13 +24,19 @@ require_once(ROOTDIR . '/libs/redbean/rb.phar');
 
 class AskGodConfig
 {
-    public $db_server = 'localhost';
-    public $db_dbname = 'askgodcomau_v1';
-    public $db_username = 'root';
-    public $db_password = 'password';
+    public $db_server = '';
+    public $db_dbname = '';
+    public $db_username = '';
+    public $db_password = '';
+    public $server = 'dev';
 }
 
 $config = new AskGodConfig();
+
+// overwrite $config->settingNames in the config.$server.php file.
+// Not included in GIT, but you can figure out what to do!
+require_once(ROOTDIR . '/config.' . $config->server . '.php');
+
 
 R::setup('mysql:host=' . $config->db_server .';dbname=' . $config->db_dbname,
     $config->db_username, $config->db_password);

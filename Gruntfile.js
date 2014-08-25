@@ -22,6 +22,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-ftp-deploy');
 
     grunt.registerTask('default', ['less']);
 

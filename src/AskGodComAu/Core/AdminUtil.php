@@ -1,5 +1,6 @@
 <?php namespace AskGodComAu\Core;
 
+use AskGodComAu\Model\Admin;
 use R;
 
 class AdminUtil
@@ -31,16 +32,28 @@ class AdminUtil
     }
 
 
-    public static function SetupAdmin($username, $password, $expertise, $superuser) {
+    /**
+     * @param string $username
+     * @param string $password
+     * @param bool $superuser
+     * @return int|mixed|string
+     */
+    public static function SetupAdmin($username, $password, $superuser) {
 
         $admin = AdminUtil::GetAdmin($username, $password);
 
         if ($admin == null) {
-            $admin = R::dispense('admin');
+
+            $admin = Admin::DispenseModel();
+
+            // $admin = R::dispense('admin');
             $admin->username = $username;
             $admin->hash = AdminUtil::Hash($password);
+
+            // $admin->sharedQuestionList = $questionBean;
+
             $admin->superuser = $superuser;
-            $admin->expertise = $expertise;
+
             $adminID = R::store($admin);
             return $adminID;
         } else {

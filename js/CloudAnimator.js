@@ -8,7 +8,7 @@
         var zIndex = Math.floor(Math.random() * 10 + 1);
 
         this.$element = $(document.createElement('div')).addClass('cloud').addClass('cloud' + cloudNo);
-        this.$element.append('<img src="../img/cloud' + cloudNo + '.8a.png" />');
+        this.$element.append('<img src="../img/clouds/cloud' + cloudNo + '.trim.50.8a.png" />');
         // this.$element.css({ top: this.getRandomTop(), zIndex: zIndex });
         this.$element.css({ top: this.getRandomTop() });
 

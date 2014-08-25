@@ -1,7 +1,10 @@
 <?php namespace AskGodComAu\Controllers;
+use AskGodComAu\Core\MarkdownHelper;
 use AskGodComAu\Core\RedbeanHelpers;
+use AskGodComAu\Model\DatabaseModelBootstrapper;
 use AskGodComAu\Model\IndexModel;
 use AskGodComAu\Core\HttpUtility;
+use AskGodComAu\Model\Userquestion;
 
 class Index {
 
@@ -21,7 +24,9 @@ class Index {
         $model = array(
             'title' => 'AskGod.com.au!',
             'nav' => 'index',
+            'blimp_markdown' => MarkdownHelper::GetMarkdownHtml('home_blimp.md'),
             'form' => $form
+
         );
         echo $this->view->render($model);
     }
@@ -35,17 +40,34 @@ class Index {
 
         if ($is_valid) {
 
-            $userquestion = \R::dispense('userquestion');
+            $userquestion = Userquestion::ModelDispense();
             $userquestion->consumeIndexModel($indexModel);
+
+            $model = array(
+                'title' => 'AskGod.com.au!',
+                'nav' => 'index',
+                'blimp_markdown' => MarkdownHelper::GetMarkdownHtml('home_blimp.md'),
+                'form' => $indexModel,
+                'forceValidation' => true);
 
             try
             {
                 $id = \R::store($userquestion);
-                HttpUtility::Redirect("questions/{$id}");
+
+//                $model = array(
+//                    'title' => 'AskGod.com.au!',
+//                    'nav' => 'index',
+//                    'blimp_markdown' => MarkdownHelper::GetMarkdownHtml('home_blimp.md'),
+//                    'form' => $indexModel
+//                );
+
+                // HttpUtility::Redirect("thanks/{$id}");
+                HttpUtility::Redirect("thanks");
             }
             catch(\Exception $exSave) {
                 $model = array('title' => 'AskGod.com.au!',
                     'nav' => 'index',
+                    'blimp_markdown' => MarkdownHelper::GetMarkdownHtml('home_blimp.md'),
                     'form' => $indexModel,
                     'forceValidation' => true);
             }
@@ -55,6 +77,7 @@ class Index {
 
             $model = array('title' => 'AskGod.com.au!',
                 'nav' => 'index',
+                'blimp_markdown' => MarkdownHelper::GetMarkdownHtml('home_blimp.md'),
                 'form' => $indexModel,
                 'forceValidation' => true);
         }

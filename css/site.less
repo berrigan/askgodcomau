@@ -3,15 +3,15 @@
 @fontSize: 18px;
 @fontFamilyDefault: cabin, Tahoma, Verdana, Arial;
 
-@formColor: #555555;
 
+@color_askgodorange: rgb(244, 111, 32);
+
+@formColor: #555555;
 
 @errorColor: rgb(234, 26, 26);
 @textShadowColor: rgba(255,255,255, 0.6);
 
-@askgodorange: rgb(244, 111, 32);
-
-@errorColor: @askgodorange;
+@errorColor: @color_askgodorange;
 @textShadowColor: rgba(0,0,0,0.6);
 
 
@@ -24,7 +24,7 @@
 @fontSizeSmaller: 18px;
 
 
-@backgroundImage: url("../img/bg.clouds.2332.1448.jpg");
+@backgroundImage: url("../img/bg/bg.clouds.2332.1448.jpg");
 @backgroundFullWidth: 2332px;
 @backgroundFullHeight: 1448px;
 
@@ -76,32 +76,37 @@
     position: relative;
     margin: 0 auto;
     width: @mainColumnWidth;
-    max-width: 96%;
+    max-width: 100%;
 
     padding: 1em 1em 3em 1em; // margin-collapse fix as well
 
     @media all and (max-width: @smallDeviceMediaWidth) {
-        padding: 1em .4em 3em;
+        padding: 1em 1em 3em;
     }
+
 }
 
 
 //
 // ----- FONTS -----
 //
-.fontFaceSquirrelGenerated(@fontname, @filename, @svgid, @weight: normal, @style: normal) {
+.fontFaceSquirrelGenerated(@fontname, @filename, @svgid, @weight: 400, @style: normal) {
     font-family: @fontname;
     src: url('fonts/@{filename}.eot');
     src: url('fonts/@{filename}.eot?#iefix') format('embedded-opentype'),
     url('fonts/@{filename}.woff') format('woff'),
     url('fonts/@{filename}.ttf') format('truetype'),
     url('fonts/@{filename}.svg#@{svgid}') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    font-weight: @weight;
+    font-style: @style;
 }
 
 @font-face {
     .fontFaceSquirrelGenerated('cabin', 'cabin-regular-webfont', 'cabinregular');
+}
+
+@font-face {
+    .fontFaceSquirrelGenerated('digital', 'lets_go_digital_regular-webfont', 'lets_go_digitalregular');
 }
 
 
@@ -125,6 +130,7 @@ html {
 
 
 body {
+
     position: relative;
     margin: 0;
     padding: 0;
@@ -133,15 +139,21 @@ body {
 
     font-family: @fontFamilyDefault;
     font-size: @fontSize;
-    color: #ffffff;
+    line-height: 1.35em;
 
+    color: #ffffff;
     background-color: #0044ba;
+
+    overflow-x: hidden;
 
     background-image: @backgroundImage;
     background-repeat: repeat;
     background-position: center top;
-    // background-size: 100% auto;
+
     background-size: auto auto;
+    background-size: cover;
+
+    background-attachment: fixed;
 
     &.verticallarger {
         // background-size: auto 100%;
@@ -156,11 +168,27 @@ body {
     top: 0px; bottom: 0px;
     left: 0px; right: 0px;
 
+    // background-attachment: fixed;
+
     background-image: @backgroundImage;
     background-repeat: repeat;
     background-position: center top;
     background-size: @backgroundFullWidth @backgroundFullHeight;
     opacity: 0.3;
+}
+
+body {
+
+    .darkeroverlay {
+        #skyoverlay {
+            opacity: .45;
+        }
+    }
+
+    &.events {
+
+    }
+
 }
 
 
@@ -191,11 +219,20 @@ body {
     }
 
     @fullWidth: 2332;
-    @cloudWidth1: 609 / @fullWidth * 100%;
-    @cloudWidth2: 1089 / @fullWidth * 100%;
-    @cloudWidth3: 1024 / @fullWidth * 100%;
-    @cloudWidth4: 1491 / @fullWidth * 100%;
-    @cloudWidth5: 1171 / @fullWidth * 100%;
+
+    // full = doubled file
+    @cloudWidth1: 1206 / @fullWidth * 100%;
+    @cloudWidth2: 1206 / @fullWidth * 100%;
+    @cloudWidth3: 1332 / @fullWidth * 100%;
+    @cloudWidth4: 976 / @fullWidth * 100%;
+    @cloudWidth5: 1034 / @fullWidth * 100%;
+
+    // normal / kinda half
+//    @cloudWidth1: 603 / @fullWidth * 100%;
+//    @cloudWidth2: 603 / @fullWidth * 100%;
+//    @cloudWidth3: 666 / @fullWidth * 100%;
+//    @cloudWidth4: 488 / @fullWidth * 100%;
+//    @cloudWidth5: 517 / @fullWidth * 100%;
 
     .cloud1 { width: @cloudWidth1; left: -100%; }
     .cloud2 { width: @cloudWidth2; left: -100%; }
@@ -204,13 +241,6 @@ body {
     .cloud5 { width: @cloudWidth5; left: -100%; }
 
 }
-
-
-
-
-
-
-
 
 
 
@@ -253,6 +283,10 @@ a {
     &:hover, &:focus {
         background-color: rgba(0,0,0,0.2);
     }
+
+    &.submit {
+        font-weight: bold;
+    }
 }
 
 
@@ -270,7 +304,10 @@ a {
 
 
 #contentbg {
-    display: block;
+
+    // display: block;
+    display: none;
+
     position: fixed;
     margin: 0 auto;
     height: 100%;
@@ -297,6 +334,8 @@ a {
 
     padding-top: 2em;
     padding-bottom: 0;
+
+    z-index: 10;
 
     @media all and (max-width: @smallDeviceMediaWidth) {
         padding-top: 2em;
@@ -437,10 +476,14 @@ a {
 
     .placeholderOverridesChildren(1, #ffffff);
 
+
+    hr {
+        border-style: solid;
+    }
+
     p {
         position: relative;
         text-overflow: ellipsis;
-        background: purple;
     }
 
 
@@ -515,25 +558,234 @@ a {
             margin: 0em auto 0;
         }
     }
-
-
-
 }
 
 
+.markdown
+{
 
-
-
-// index
-#indexpage {
-
-    #submitcontainer {
-        margin-top: 1.5em;
+    h1 {
+        font-size: 1.3em;
+        line-height: 1.1em;
     }
 
 }
 
 
+.markdown {
+
+    background-image: url('../img/bg/paper.jpg');
+    padding: 2em 1.5em 3em;
+    color: #444;
+
+
+    hr {
+        border-style: solid;
+        margin: .3em 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: .3em;
+        margin-bottom: .6em;
+        text-shadow: 0px 1px 0px #fff;
+    }
+
+    a {
+        color: @color_askgodorange;
+        text-shadow: 0px 1px 0px lighten(@color_askgodorange, 80);
+    }
+
+}
+
+
+
+//
+// ----- INDEX
+//
+#indexpage {
+
+    padding-top: 0px;
+
+    #indexcopyimage {
+        img {
+            width: 100%;
+        }
+    }
+
+    #submitcontainer {
+        margin-top: 1.5em;
+    }
+
+    .copy {
+        margin-top: 4em;
+        font-size: @fontSize + 2;
+        text-align: justify;
+    }
+
+    #index_nav {
+        position: relative;
+        display: block;
+        text-align: center;
+        margin: 2em 0 1em;
+
+        a {
+            margin: 0 .5em;
+        }
+    }
+
+
+    #blimp {
+
+        font-family: digital;
+
+        position: relative;
+        background-image: url("../img/bg/blimp.v2.8a.png");
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+
+        overflow: hidden;
+
+        width: 165%;
+        margin-left: -43.3%;
+
+        img {
+            position: relative;
+            visibility: hidden;
+            width: 100%;
+        }
+
+        font-size: 403px; // = width of copy area below
+
+        #blimp_text {
+
+            @blimpScreenColor: #0a0242;
+            @blimpTextColor: #3a81c3;
+
+            color: @blimpTextColor;
+            background-color: @blimpScreenColor;
+
+            top: 71.8%;
+            bottom: 4.85%;
+
+            left: 29%;
+            right: 16.1%;
+
+            position: absolute;
+
+            font-size: 6%;
+            line-height: 1em;
+            text-align: center;
+            letter-spacing: 2px;
+
+            overflow: hidden;
+
+            #blimp_text_inner {
+
+                position: absolute;
+                display: block;
+                padding: 4em .5em;
+
+                top: 0%; // -> -593%
+
+                p {
+                    margin: .4em;
+                }
+
+            }
+
+        }
+
+
+        @media all and (max-width: @smallDeviceMediaWidth) {
+
+            margin-top: 40px;
+
+            background-image: url("../img/bg/blimp_mini.sized.8a.png");
+            width: 108%;
+            margin-left: -4%;
+
+            #blimp_text {
+                top: 50%;
+                bottom: 19%;
+                left: 13.5%;
+                right: 14.1%;
+            }
+
+        }
+
+
+
+    }
+
+}
+
+#indexcontainer {
+    position: relative;
+    display: block;
+    overflow-x: hidden;
+}
+
+
+
+//
+// ----- ABOUT
+//
+#aboutpage {
+
+    margin-top: 2em;
+
+    #arm_god {
+        position: absolute;
+        top: -425px;
+        right: -678px;
+        background-image: url("../img/bg/arm_god.8a.png");
+        width: 712px;
+        height: 625px;
+    }
+
+    #arm_man {
+        position: absolute;
+        bottom: -370px;
+        background-image: url("../img/bg/arm_man.8a.png");
+        width: 722px;
+        height: 578px;
+
+        left: -36.8em;
+
+        @media all and (max-width: @smallDeviceMediaWidth) {
+            left: -36.85em;
+        }
+
+    }
+
+}
+
+#aboutcontainer {
+    position: relative;
+    overflow: hidden;
+    display: block;
+}
+
+//
+// ----- EVENTS
+//
+#eventspage {
+
+    .markdown {
+        p {
+            margin: .6em 0;
+        }
+    }
+
+}
+
+
+
+
+
+//
+// ---- ADMIN LOGIN
+//
 #adminlogin {
 
     #submitcontainer {

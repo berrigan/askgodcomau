@@ -2,7 +2,7 @@
 
 use AskGodComAu\Core\MarkdownHelper;
 
-class About {
+class Thanks {
 
     private $twig;
     private $view;
@@ -10,19 +10,18 @@ class About {
     public function __construct()
     {
         $this->twig = \AskGodComAu\Core\TwigFactory::getTwig();
-        $this->view = $this->twig->loadTemplate('about.html');
+        $this->view = $this->twig->loadTemplate('thanks.html');
     }
 
     function GET() {
 
-        $markdownHtml = MarkdownHelper::GetMarkdownHtml('about_page.md');
-
         $model = array(
             'title' => 'AskGod.com.au!',
-            'nav' => 'about',
-            'markdown' => $markdownHtml
+            'nav' => 'thanks',
+            'markdown' => MarkdownHelper::GetMarkdownHtml('thanks.md')
         );
+
         echo $this->view->render($model);
     }
-}
 
+} 

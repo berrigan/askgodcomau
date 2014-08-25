@@ -1,16 +1,39 @@
 {% include 'header.html' %}
 
-<div class="content" id="aboutpage">
 
-    <div>about page</div>
+<div id="aboutcontainer">
+
+    <div class="content" id="aboutpage">
 
 
-    <script>
-        window.pagejs = function() {
+        <div class="markdown">
 
-        };
-    </script>
+            {{ markdown | raw }}
+
+            <div id="arm_god"></div>
+            <div id="arm_man"></div>
+        </div>
+
+
+
+        <script>
+            window.pagejs = function() {
+
+                $(document.links).filter(function() {
+                    return this.hostname != window.location.hostname;
+                }).attr('target', '_blank');
+
+                $("#header").prependTo("#aboutcontainer");
+
+            };
+        </script>
+
+    </div>
+
 
 </div>
+
+
+
 
 {% include 'footer.html' %}

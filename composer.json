@@ -1,7 +1,8 @@
 {
     "require": {
         "twig/twig": "1.*",
-        "wixel/gump": "1.*"
+        "wixel/gump": "1.*",
+        "erusev/parsedown": "dev-master"
     },
     "autoload": {
         "psr-0": {

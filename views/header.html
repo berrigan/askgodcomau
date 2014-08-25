@@ -15,7 +15,7 @@
 
 
 </head>
-<body>
+<body class="{{ bodyclass }}">
 
 <div id="clouds"></div>
 <div id="skyoverlay"></div>
@@ -26,10 +26,11 @@
 <div id="header">
 
     <div id="askgodlogo">
-        <img src="/img/askgodcomau.png" />
+        <img src="/img/text/askgodcomau.png" />
     </div>
 
 
+    {% if nav != 'index' %}
     <div id="nav">
 
         <div id="navlinks">
@@ -41,6 +42,7 @@
         </div>
 
     </div>
+    {% endif %}
 
 </div>
 

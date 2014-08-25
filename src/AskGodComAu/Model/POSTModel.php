@@ -7,7 +7,7 @@ abstract class POSTModel {
     abstract public function getValidations();
     abstract public function getFilters();
 
-    public $is_valid = true;
+    private $is_valid = true;
     private $gump;
 
     function __construct() {
@@ -37,6 +37,10 @@ abstract class POSTModel {
         }
 
         return $this->is_valid;
+    }
+
+    public function IsValid() {
+        return $this->$is_valid;
     }
 
 

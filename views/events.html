@@ -1,0 +1,27 @@
+{% include 'header.html' %}
+
+
+<div class="content" id="eventspage">
+
+    <div class="markdown">
+
+        {{ markdown | raw }}
+
+    </div>
+
+
+
+    <script>
+        window.pagejs = function() {
+
+            $(document.links).filter(function() {
+                return this.hostname != window.location.hostname;
+            }).attr('target', '_blank');
+
+        };
+    </script>
+
+</div>
+
+
+{% include 'footer.html' %}

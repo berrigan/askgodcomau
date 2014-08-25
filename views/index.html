@@ -1,14 +1,22 @@
 {% include 'header.html' %}
 
+
+<div id="indexcontainer">
+
 <div class="content" id="indexpage">
+
+
+    <div id="indexcopyimage">
+        <img alt="" src="img/text/ask_any_question.png" />
+    </div>
 
 
     <form id="indexform" action="/" method="post">
 
 
         <div class="container">
-            <label class="formlabel" for="question">MY QUESTION IS _</label>
-            <textarea id="question" name="question" placeholder="MY QUESTION IS _" tabindex="1"required="true" >{{ form.question }}</textarea>
+            <label class="formlabel" for="questiontext">MY QUESTION IS _</label>
+            <textarea id="questiontext" name="questiontext" placeholder="MY QUESTION IS _" tabindex="1"required="true" >{{ form.questiontext }}</textarea>
         </div>
 
         <div class="container">
@@ -30,27 +38,72 @@
     </form>
 
 
-
-    <script>
-
-        window.pagejs = function() {
-
-            var $form = $("#indexform");
-            var formValidator = $form.validate();
-
-            {% if forceValidation %}
-                $form.valid();
-            {% endif %}
-
-            $('input, textarea').each(function() {
-                window.fnRunPlaceholderLabel(this);
-            });
-
-        };
+    <div id="index_nav">
+        <a href="about">ABOUT</a> |
+        <a href="events">EVENTS</a>
+    </div>
 
 
-    </script>
+    <div id="blimp">
+        <!-- sizer -->
+        <img src="img/bg/blimp.8a.png" />
+        <div id="blimp_text">
+            <div id="blimp_text_inner">
+
+                {{ blimp_markdown |raw }}
+
+            </div>
+        </div>
+    </div>
 
 </div>
+</div>
+
+
+<script>
+
+    var forceValidation = {{ forceValidation ? 'true' : 'false' }};
+
+
+    window.pagejs = function() {
+
+        var $form = $("#indexform");
+        var formValidator = $form.validate();
+
+        if (forceValidation) {
+            $form.valid();
+        }
+
+
+        $('input, textarea').each(function() {
+            window.fnRunPlaceholderLabel(this);
+        });
+
+        var $blimpText = $("#blimp_text");
+        var $blimp = $("#blimp");
+        var setBlimpFontSize = function() {
+            var w = $blimpText.outerWidth();
+            $blimp.css('font-size', w + 'px');
+        };
+
+        setBlimpFontSize();
+        window.addEventListener('resize', setBlimpFontSize);
+
+        // animate text
+        var $blimpTextInner = $("#blimp_text_inner");
+        var animateText = function() {
+            $blimpTextInner.css('top', '0%');
+
+            $blimpTextInner.velocity({ top: '-620%' }, { duration: 35000, easing: 'linear', complete: function() {
+                animateText();
+            } });
+        };
+        animateText();
+
+    };
+
+
+</script>
+
 
 {% include 'footer.html' %}
