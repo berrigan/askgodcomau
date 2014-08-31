@@ -1,0 +1,157 @@
+{% include 'header.html' %}
+
+<div class="content adminpage adminwide" id="adminquestions" ng-app="questionsapp">
+
+    <div>QUESTIONS</div>
+
+    <script type="text/ng-template" id="question_renderer.html">
+
+        <div class="adminfield">
+            <label>idtext (eg. 4.2.5)</label>
+            <div><input type="text" ng-model="q.idtext" /></div>
+        </div>
+
+        <div class="adminfield">
+            <label>title</label>
+            <div><input type="text" ng-model="q.title" /></div>
+        </div>
+
+        <div class="adminfield">
+            <label>text</label>
+            <div><textarea type="text" ng-model="q.text"></textarea></div>
+        </div>
+
+
+        <div class="adminfield_buttons">
+            <div class="button" ng-click="deletequestion(q)">DELETE!</div>
+            <div class="button" ng-click="addchild(q)">AddChild</div>
+        </div>
+
+        <div class="questionscontainer" style="padding-left: 15px" ng-if="q.ownQuestion.length > 0">
+            <div class="question" ng-repeat="q in q.ownQuestion" ng-include="'question_renderer.html'"></div>
+        </div>
+
+    </script>
+
+
+
+    <div id="adminquestionsctrl" ng-controller="AdminQuestionsCtrl">
+
+
+        <div id="adminbuttons">
+            <div class="button" ng-click="addquestion()">Add Question</div>
+            <div class="button" ng-click="log()">Save Add/Text Questions</div>
+        </div>
+
+        <div class="questionscontainer">
+            <div class="question" ng-repeat="q in questions" ng-include="'question_renderer.html'">
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.0/angular.min.js"></script>
+
+    <script>
+        window.pagejs = function() {
+
+            removeItem = function(array, item) {
+                var index = array.indexOf(item);
+                if (index > -1) {
+                    array.splice(index, 1);
+                    return true;
+                } else {
+                    return false;
+                }
+            };
+
+            var app = angular.module('questionsapp', []).config(function($interpolateProvider){
+                    $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
+                }
+            );
+
+            app.controller('AdminQuestionsCtrl', function ($scope, $http) {
+
+                $scope.test = "test";
+
+                $scope.questions = [];
+
+                $http.get('/admin/api/questions').success(function(data) {
+                    $scope.questions = data;
+                    console.log(data);
+                });
+
+
+                $scope.addquestion = function() {
+                    $scope.questions.push({
+                        idtext: ($scope.questions.length + 1).toString(),
+                        title: 'new title',
+                        text: 'new text',
+                        ownQuestion: []
+                    });
+                };
+
+                $scope.addchild = function(q) {
+
+                    if (typeof q.ownQuestion === 'undefined') {
+                        q.ownQuestion = [];
+                    }
+
+                    var newChild = {
+                        idtext: q.idtext + '.' + (q.ownQuestion.length + 1),
+                        title: 'child of ' + q.title,
+                        text: 'child text of ' + q.title,
+                        ownQuestion: []
+                    };
+
+                    q.ownQuestion.push(newChild);
+                };
+
+
+
+                var process_delete_recursive = function(questionArray, q) {
+                    var deleted = removeItem(questionArray, q);
+                    if (!deleted) {
+                        if (q.ownQuestion) {
+                            process_delete_recursive(q.ownQuestion);
+                        }
+                    }
+                };
+
+
+                $scope.deletequestion = function(q) {
+
+                    if (typeof q.id === 'undefined') {
+                        process_delete_recursive($scope.questions, q);
+                    } else {
+                        $http.post('/admin/api/questions/' + q.id + '/delete', {}).success(function(data) {
+                            if (data.success) {
+                                process_delete_recursive($scope.questions, q);
+                            }
+                        });
+                    }
+
+
+                };
+
+
+                $scope.log = function() {
+                    var json = JSON.stringify($scope.questions);
+
+                    $http.post('/admin/api/questions', $scope.questions).success(function(data) {
+                        console.log(data);
+                    });
+
+                    // console.log($scope.questions);
+                };
+
+            });
+
+        };
+    </script>
+
+
+</div>
+
+{% include 'footer.html' %}

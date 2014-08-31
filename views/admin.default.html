@@ -1,8 +1,23 @@
 {% include 'header.html' %}
 
-<div class="content" id="admindefault">
+<div class="content adminpage" id="admindefault">
 
     <div>ADMIN DEFAULT</div>
+
+    <div id="admindefaultlinks">
+
+    {% if admin.superuser == true %}
+
+        <div><a href="questions">Edit questions</a></div>
+
+        <!-- api kinda stuff with _blank -->
+        <div><a href="api/userquestions" target="_blank">See user questions data</a></div>
+
+    {% endif %}
+
+    </div>
+
+
 
     <script>
         window.pagejs = function() {

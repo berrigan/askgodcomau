@@ -3,23 +3,28 @@
 
 class SessionHelper {
 
-    public static function Start() {
+    public static function Start()
+    {
         session_start();
     }
 
-    public static function is_set($name) {
+    public static function is_set($name)
+    {
         return isset($_SESSION[$name]);
     }
 
-    public static function get($name) {
-        return $_SESSION[$name];
+    public static function get($name)
+    {
+        return isset($_SESSION[$name]) ? $_SESSION[$name] : null;
     }
 
-    public static function set($name, $value) {
+    public static function set($name, $value)
+    {
         $_SESSION[$name] = $value;
     }
 
-    public static function remove($name) {
+    public static function remove($name)
+    {
         unset($_SESSION[$name]);
     }
 

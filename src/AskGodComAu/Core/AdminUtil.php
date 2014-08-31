@@ -6,11 +6,21 @@ use R;
 class AdminUtil
 {
 
+    /**
+     * @param $username
+     * @param $password
+     * @return \AskGodComAu\Model\Admin
+     */
     public static function GetAdmin($username, $password) {
         $admin  = \R::findOne('admin', 'username = :username AND hash = :hash ', [ ':username' => $username, ':hash' => AdminUtil::Hash($password) ]);
         return $admin;
     }
 
+    /**
+     * @param $username
+     * @param $password
+     * @return \AskGodComAu\Model\Admin
+     */
     public static function Login($username, $password) {
         $admin = AdminUtil::GetAdmin($username, $password);
         if ($admin != null) {
@@ -23,6 +33,9 @@ class AdminUtil
         SessionHelper::remove('admin');
     }
 
+    /**
+     * @return Admin
+     */
     public static function LoggedAdmin() {
         return SessionHelper::get('admin');
     }

@@ -11,6 +11,7 @@ $nsApi = '\\AskGodComAu\\Api\\';
 
 $urls = array(
     '/' => $nsControllers . 'Index',
+    '/[?].*' => $nsControllers . 'Index', // allow query string on index
     '/about' => $nsControllers . 'About',
     '/thanks' => $nsControllers . 'Thanks',
     '/thanks/([0-9]+)' => $nsControllers . 'Thanks',
@@ -25,8 +26,22 @@ $urls = array(
     '/admin/login' => $nsControllers . 'AdminLogin',
     '/admin/logout' => $nsControllers . 'AdminLogout',
 
+    '/admin/questions' => $nsControllers . 'AdminQuestions',
+
+
     // API
-    '/admin/questions' => $nsApi . 'QuestionsApi'
+    '/admin/api/questions' => $nsApi . 'QuestionsApi',
+    '/admin/api/questions/(?P<id>\d+)/(?P<action>[a-z]+)' => $nsApi . 'QuestionsApi',
+
+    '/admin/api/userquestions' => $nsApi . 'UserquestionsApi'
 );
 
-glue::stick($urls);
+try
+{
+    glue::stick($urls);
+}
+catch (Exception $glueException) {
+    glue::stick(array(
+       '.*' => $nsControllers . 'Error'
+    ));
+}

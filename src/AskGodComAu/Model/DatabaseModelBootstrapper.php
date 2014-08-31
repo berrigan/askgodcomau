@@ -29,7 +29,12 @@ class DatabaseModelBootstrapper {
 
             self::BootstrapAdmins();
             self::BootstrapQuestion();
+
         }
+
+
+
+
 
     }
 
@@ -51,6 +56,9 @@ class DatabaseModelBootstrapper {
 
         R::store($bootstrapQuestion);
         R::trash($bootstrapQuestion);
+
+
+
     }
 
 
@@ -79,12 +87,12 @@ class DatabaseModelBootstrapper {
 
             $q1->ownQuestionList[] = $q2;
 
-            $q3 = Question::MakeNewQuestion('3', 't', $q2);
-            $q4 = Question::MakeNewQuestion('4', 't', $q2);
-            $q5 = Question::MakeNewQuestion('5', 't', $q2);
-            $q6 = Question::MakeNewQuestion('6', 't', $q2);
-            $q7 = Question::MakeNewQuestion('7', 't', $q2);
-            $q8 = Question::MakeNewQuestion('8', 't', $q2);
+            $q3 = Question::MakeNewQuestion('0.0.0', '3', 't');
+            $q4 = Question::MakeNewQuestion('0.0.0', '4', 't');
+            $q5 = Question::MakeNewQuestion('0.0.0', '5', 't');
+            $q6 = Question::MakeNewQuestion('0.0.0', '6', 't');
+            $q7 = Question::MakeNewQuestion('0.0.0', '7', 't');
+            $q8 = Question::MakeNewQuestion('0.0.0', '8', 't');
 
             R::store($q1);
             return R::load('question', 1);

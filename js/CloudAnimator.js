@@ -16,16 +16,18 @@
 
         // this.startLeft = (Math.random() * 40) - 120; // -120 -> -80
 
-        this.startLeft = -100;
-        this.endRight = 101;
+        this.startPosition = 101;
+        this.endPosition = -100;
+
+        var moveWidth = Math.abs(this.startPosition - this.endPosition);
 
         var percent = Math.random();
-        var firstLeft = this.startLeft + ((this.endRight - this.startLeft) * percent);
+        var firstLeft = this.startPosition - (moveWidth * percent);
+        var firstDuration = this.getDuration() * (1 - percent);
 
-        var firstDuration = this.getDuration() * (1 -percent);
-
-        this.animate(firstLeft, this.endRight, firstDuration, 0);
+        this.animate(firstLeft, this.endPosition, firstDuration, 0);
     };
+
 
     CloudAnimator.prototype.getRandomTop = function() {
         return (Math.random() * 120 - 10) + "%";
@@ -47,12 +49,12 @@
     CloudAnimator.prototype.startAnimate = function() {
         var that = this;
         this.$element.css('top', this.getRandomTop());
-        this.animate(this.startLeft, this.endRight, this.getDuration(), this.getDelay());
+        this.animate(this.startPosition, this.endPosition, this.getDuration(), this.getDelay());
     };
 
-    CloudAnimator.prototype.animate = function(startLeft, endRight, duration, delay) {
+    CloudAnimator.prototype.animate = function(startPosition, endPosition, duration, delay) {
         var that = this;
-        this.$element.velocity({ left: [endRight + '%', startLeft + '%'] }, { duration: duration, easing: 'linear', delay: delay, complete: function() {
+        this.$element.velocity({ left: [endPosition + '%', startPosition + '%'] }, { duration: duration, easing: 'linear', delay: delay, complete: function() {
             that.startAnimate();
         } });
     };

@@ -51,13 +51,21 @@ body {
   overflow-x: hidden;
   background-image: url("../img/bg/bg.clouds.2332.1448.jpg");
   background-repeat: repeat;
-  background-position: center top;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: auto auto;
   background-size: cover;
-  background-attachment: fixed;
 }
 body.verticallarger {
   background-size: auto auto;
+}
+@media all and (max-width: 576px) {
+  body {
+    background-image: url("../img/bg/bg.mobile.2.jpg");
+    background-position: top left;
+    background-attachment: local;
+    background-size: auto auto;
+  }
 }
 #skyoverlay {
   position: fixed;
@@ -476,7 +484,7 @@ a:focus {
 #indexpage #blimp {
   font-family: digital;
   position: relative;
-  background-image: url("../img/bg/blimp.v2.8a.png");
+  background-image: url("../img/bg/blimp.v3.sized.8a.png");
   background-repeat: no-repeat;
   background-size: 100% auto;
   overflow: hidden;
@@ -512,10 +520,10 @@ a:focus {
 #indexpage #blimp #blimp_text #blimp_text_inner p {
   margin: .4em;
 }
-@media all and (max-width: 480px) {
+@media all and (max-width: 568px) {
   #indexpage #blimp {
     margin-top: 40px;
-    background-image: url("../img/bg/blimp_mini.sized.8a.png");
+    background-image: url("../img/bg/blimp_mini.v2.sized.8a.png");
     width: 108%;
     margin-left: -4%;
   }
@@ -563,6 +571,70 @@ a:focus {
 #eventspage .markdown p {
   margin: .6em 0;
 }
+.adminpage a {
+  color: #f46f20;
+  text-shadow: 0px 1px 0px #444;
+}
+.adminpage.adminwide {
+  width: 960px;
+  min-width: 960px;
+}
 #adminlogin #submitcontainer {
   margin-top: 1.5em;
+}
+#admindefault #admindefaultlinks a {
+  display: inline-block;
+}
+#adminquestions #adminquestionsctrl .questionscontainer {
+  display: block;
+  position: relative;
+}
+#adminquestions #adminquestionsctrl .questionscontainer hr {
+  border-color: black;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question {
+  position: relative;
+  margin: 20px 0;
+  padding: 10px;
+  border: 1px solid white;
+  border-bottom: 3px solid white;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .adminfield {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 3px 0;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .adminfield:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .adminfield label {
+  float: left;
+  width: 200px;
+  text-align: right;
+  padding: .5em 10px;
+  height: 2em;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .adminfield > div {
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .adminfield input {
+  width: 100%;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .adminfield textarea {
+  width: 100%;
+  height: 6em;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .adminfield_buttons {
+  position: relative;
+  margin-top: .2em;
+}
+#adminquestions #adminquestionsctrl .questionscontainer .question .question {
+  margin: 10px;
+  border: 1px solid white;
+  border-top: 3px solid black;
 }

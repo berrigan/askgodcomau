@@ -15,6 +15,9 @@ use R;
 class Userquestion extends \RedBeanPHP\SimpleModel {
 
 
+    private static $beanname = 'userquestion';
+
+
 // * @property Array sharedQuestionList array of questions this userquestion is linked to
 
     /**
@@ -33,13 +36,18 @@ class Userquestion extends \RedBeanPHP\SimpleModel {
     }
 
 
+    public function consumeIndexModel($indexModel) {
+        RedbeanHelpers::ConsumeData($this, $indexModel);
+    }
+
+
     /**
      * @param $name
      * @return Userquestion
      */
     public static function GetUser($name)
     {
-        return R::findOne(' name = :name ', [ ':name' => $name ]);
+        return R::findOne(self::$beanname, ' name = :name ', [ ':name' => $name ]);
     }
 
     public static function NewUserquestion($name, $email, $questiontext) {
@@ -54,22 +62,14 @@ class Userquestion extends \RedBeanPHP\SimpleModel {
     }
 
 
-
-    public function dispense() {
-
+    /**
+     * @return Userquestion[]
+     */
+    public static function GetAllUserquestions()
+    {
+        return R::findAll(self::$beanname);
     }
 
 
-    public function update() {
-
-    }
-
-    public static function init() {
-
-    }
-
-    public function consumeIndexModel($indexModel) {
-        RedbeanHelpers::ConsumeData($this, $indexModel);
-    }
 
 }
